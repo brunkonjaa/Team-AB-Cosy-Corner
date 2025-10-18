@@ -1,0 +1,121 @@
+/* Color palette reference
+Background: #f8f6f1
+Header/Footer: #c8b6a6
+Text: #3a3a3a
+Accent: #d16b5f
+Card/Section: #ffffff
+*/
+
+/* Global page setup */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  background-color: #f8f6f1;
+  color: #3a3a3a;
+  line-height: 1.6;
+}
+
+/* Header section */
+header {
+  position: relative;
+  background-image: url("../images/dogs/mydog.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* soft dark overlay */
+}
+
+}
+
+/* Website title */
+.site-title {
+  margin: 0;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+/* Navigation container */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Navigation links */
+.nav-links a {
+  text-decoration: none;
+  color: #3a3a3a;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for navigation links */
+.nav-links a:hover {
+  background-color: #d16b5f;
+  color: #ffffff;
+}
+
+/* Rounded accent button */
+.nav-links a.pill {
+  background-color: #d16b5f;
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 0.5rem 1.2rem;
+}
+
+.nav-links a.pill:hover {
+  background-color: #b85a51;
+}
+
+/* Main content area */
+main {
+  background-color: #ffffff;
+  margin: 2rem auto;
+  max-width: 900px;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  padding-bottom: 80px; /* prevent overlap with footer */
+}
+
+/* Footer fixed at bottom */
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #c8b6a6;
+  color: #3a3a3a;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 600px) {
+  .nav-links {
+    flex-direction: column;
+  }
+
+  main {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
