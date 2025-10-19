@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Happy Paw</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+  <header>
+    <h1 class="site-title">Happy Paw</h1>
+
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a href="../about/about.html">About</a>
+	  <a href="../booking/booking.html">Booking</a>
+	  <a href="contact.html">Contact</a>
+      <a href="../services/services.html">Services</a>
+    </nav>
+  </header>
+
+  <main class="contact-page">
+    <section class="contact-form">
+      <h2>We'd love to hear from you</h2>
+      <p>
+        Whether you have grooming queries, need help planning your dog's first visit,
+        or want to collaborate on a community event, our team is happy to help.
+      </p>
+
+      <form>
+        <div class="form-row">
+          <label>Full name *</label>
+          <input type="text" placeholder="Your name" required />
+        </div>
+
+        <div class="form-row">
+          <label>Email *</label>
+          <input type="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="form-row">
+          <label>How can we help? *</label>
+          <select required>
+            <option value="">Select a topic</option>
+            <option>Grooming enquiry</option>
+            <option>Booking question</option>
+            <option>General feedback</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label>Message *</label>
+          <textarea rows="5" placeholder="Type your message here..." required></textarea>
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" required />
+          I consent to Happy Paw storing my details for the purpose of this enquiry.
+        </label>
+
+        <button type="submit" class="primary-btn">Send Message</button>
+      </form>
+    </section>
+
+    <aside class="contact-info">
+      <h3>Visit Happy Paw</h3>
+      <div class="map-placeholder">Map preview coming soon</div>
+
+      <h4>Salon Hours</h4>
+      <ul class="hours">
+        <li><span>Tuesday - Friday</span><span>09:00 - 18:30</span></li>
+        <li><span>Saturday</span><span>09:00 - 17:00</span></li>
+        <li><span>Sunday & Monday</span><span>Closed</span></li>
+      </ul>
+
+      <p><strong>Phone:</strong> +353 (0)12 345 6789</p>
+      <p><strong>Email:</strong> hello@something.ie</p>
+
+      <button class="secondary-btn">Book A Visit</button>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Happy Paw | All rights reserved.</p>
+  </footer>
+</body>
+</html>

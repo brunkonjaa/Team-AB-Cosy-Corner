@@ -10,31 +10,49 @@ Card/Section: #ffffff
 body {
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: "Lora", serif;
   background-color: #f8f6f1;
   color: #3a3a3a;
   line-height: 1.6;
 }
 
+h1, h2, h3, h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
 /* Header section */
 header {
   position: relative;
-  background-image: url("../images/dogs/mydog.jpg");
+  background-image: url("../images//dogs/mydog.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   height: 220px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #ffffff;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  z-index: 1;
 }
 
+/* Add soft overlay behind text */
 header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.3); /* soft dark overlay */
+  background-color: rgba(0, 0, 0, 0.35); /* darken just enough to see white text */
+  z-index: 0;
+}
+
+/* Ensure nav and title sit above the overlay */
+header * {
+  position: relative;
+  z-index: 1;
+}
+
 }
 
 }
@@ -58,13 +76,12 @@ header::before {
 /* Navigation links */
 .nav-links a {
   text-decoration: none;
-  color: #3a3a3a;
+  color: #ffffff; /* white text for visibility */
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
-/* Hover effect for navigation links */
 .nav-links a:hover {
   background-color: #d16b5f;
   color: #ffffff;
@@ -93,6 +110,20 @@ main {
   text-align: center;
   padding-bottom: 80px; /* prevent overlap with footer */
 }
+/* Centered image section */
+.center-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+}
+
+.center-image img {
+  max-width: 50%;        /* scales nicely on all devices */
+  height: auto;
+  border-radius: 12px;    /* optional: soft edges */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* soft shadow for depth */
+}
 
 /* Footer fixed at bottom */
 footer {
@@ -119,3 +150,67 @@ footer {
     padding: 1rem;
   }
 }
+
+/* 	End of initial work done on css,
+	mainly for index page,
+	but it works on others so far,
+	more changes to come */
+
+/*Start of services styling */
+/* Services page */
+.services-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-item {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h3 {
+  margin-bottom: 0.5rem;
+  color: #d16b5f;
+}
+
+.services-footer {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.1rem;
+}
+/* Services page hover effect because it looks great */
+
+.service-item {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  border: 1px solid transparent;
+}
+
+/* Hover effect */
+.service-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  border-color: #d16b5f; /* coral accent border */
+}
+
+/* Optional: highlight title color on hover */
+.service-item:hover h3 {
+  color: #b95a50; /* slightly darker coral */
+}
+
+/* Optional: subtle cursor hint */
+.service-item {
+  cursor: pointer;
+}
+/* end of services styling */
