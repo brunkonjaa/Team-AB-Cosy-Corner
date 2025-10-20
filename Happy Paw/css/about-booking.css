@@ -1,4 +1,4 @@
-@import "main (global styles - navigation, layout, footer, fonts, colours).css";
+@import "main.css";
 
 
 /* google icons */
@@ -15,12 +15,7 @@ h1 > .material-symbols-rounded {
 }
 
 /* Responsive design for mobile screens */
-@media (max-width: 900px) {
-    body{
-    width: 100vw !important;
-    overflow-x: hidden !important;
-    }
-
+@media (max-width: 600px) {
     header {
         flex-direction: column;
         text-align: center;
@@ -37,19 +32,21 @@ h1 > .material-symbols-rounded {
         text-align: left;
         width: 90%;
     }
-     p {
-        overflow-wrap: break-word;
-    }
+    
     .main-content {
         gap: 1rem !important;
         padding: 0.5rem;
         flex-direction: column;
         height: 100% !important;
+        width: 100% !important;
+        max-width: 100vw !important;
     }
 
     aside {
         padding: 0.5rem !important;
         border-left: none !important;
+        width: 100% !important;
+        max-width: 100vw !important;
     }
 
     footer {
@@ -62,7 +59,12 @@ h1 > .material-symbols-rounded {
     max-width: 100vw !important;
     box-sizing: border-box;
     margin-left: 0 !important;
-}
+    }
+
+    .form-input-flex{
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /* all elements */
@@ -75,10 +77,15 @@ a, a:hover, a:active {
     color: var(--white);
 }
 
+html, body {
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
 body {
     background-color: var(--bg_colour);
     font-family: 'Times', sans-serif;
-    height: 100vh;
     width: 100%;
 }
 
@@ -90,7 +97,7 @@ h1 {
 
 /* h2 and h3 */
 h2, h3 {
-        font-family: 'Satoshi', sans-serif;
+    font-family: 'Satoshi', sans-serif;
     font-weight: 700;
     color: var(--secondary_colour);
 }
@@ -99,24 +106,19 @@ h2, h3 {
 p {
     color: var(--p);
     line-height: 2em;
+    overflow-wrap: break-word;
 }
 
 /* header */
 header {
     margin-top: 15px;
     background: var(--banner);                  /* banner bg colour */
-    border-radius: 0rem;                        /* rounded corners */
+    border-radius: 0;                        /* rounded corners */
     padding: 3em;
     display: flex;
     align-items: center;                        /* centres items in header*/
     justify-content: space-between;             /* space between h1 and nav-bar in header*/
 }
-
-/* main content (about) */
-/* main {
-    text-align: justify;
-    height: auto;
-} */
 
 aside {
     line-height: 0em;
@@ -178,30 +180,12 @@ button > a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;             /* space between elements in container*/
-
-
 }
 
 .main-section {
     max-width: 600px;        /* optional, prevents super-wide content */
     width: 100%;
 }
-
-/* .all-main-content {            // need to optimise the code pls ignore for now......
-    margin: 15px auto;
-    padding: 2rem;
-    max-width: 1100px;       
-    width: 100%;
-    height: 50%;
-    max-height: 600px;
-    background-color: var(--white);
-    border-radius: 1rem;
-    box-shadow: 0px 1px 5px var(--shadow);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 2rem;
-} */
 
 .main-content {
     display: flex;
@@ -210,10 +194,9 @@ button > a:hover {
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    height: auto;
     background-color: #ffffff;
     margin: 15px auto;
-    max-width: 1100px;
+    max-width: 900px;
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0 0 12px var(--shadow);
@@ -253,7 +236,7 @@ button > a:hover {
 }
 
 .center-image img {
-  max-width: 50%;        /* scales nicely on all devices */
+  max-width: 70%;        /* scales nicely on all devices */
   height: auto;
   border-radius: 12px;    /* optional: soft edges */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* soft shadow for depth */
@@ -261,31 +244,30 @@ button > a:hover {
 
 /* FORM BOOKING */
 form {
-    height: 55vh;
+    height: 50%;
 }
 .booking-form {         /*need to add to media query */
     padding: 40px;
-    max-width: 600px;
-    border-bottom: solid 1px var(--secondary_colour) ;
+    max-width: 700px;
+    border-bottom: solid 1px var(--secondary_colour);
+    height: fit-content;
 }
 
 .input-flex {
     display: flex;
     flex-direction: column;
     width: 100%;
+    justify-content: center;
 }
 
 .form-input-flex {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    gap: 2rem;
+    gap: 3rem;
 }
 
-.form-input-flex > .input-box {
-    width: 50%;
-}
-main > section > h2, main> section> p{
+main > section > h2, main > section > p{
     text-align: center;
 }
 label {
@@ -300,8 +282,8 @@ input{
     font-family: 'Satoshi', sans-serif;
 }
 .input-box {
-    height: 100%;
-    padding: 10px 22px;
+
+    padding: 10px;
     border: 1px solid var(--secondary_colour);
     border-radius: 0.5rem;
     outline: none;
@@ -314,18 +296,20 @@ input{
 }
 
 select {
+    width: 100%;
     background-color: var(--transparent);
     color: var(--faint);
     font-family: 'Satoshi', sans-serif;
 }
 
 .date-time-service {
-    width: 100%;
-    gap: 0.5rem;
+    gap: 1rem;
     text-align: left;
 }
 
 .consent > p {
+    float: left;
+    margin-right: 10px;
     font-size: 0.8rem;
     font-weight: 300;
     color: var(--secondary_colour);
@@ -333,10 +317,36 @@ select {
 }
 
 .consent-flex {
-    display: flex;
-    justify-content: center;
+    display: block;
+    width: calc(100%-10px);
+    padding: 20px 0;
+    border-radius: 0.5rem;
     gap: 1rem;
-    align-items: center;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
+textarea {
+    resize: none;
+}
 
+.submit-btn {
+    float: right;
+    margin-top: 0;
+    width: 5rem;
+    padding: 8px;
+    border-radius: 0.5rem;
+    color: var(--white);
+    background: rgb(188, 108, 96);
+    box-shadow: 1px 1px 8px var(--shadow);
+    transition: ease-in-out 100ms;
+}
+
+.submit-btn:hover{
+    background: var(--p);
+
+}
+
+.submit-btn:active {
+   color: var(--secondary_colour);
+}

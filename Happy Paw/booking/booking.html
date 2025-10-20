@@ -51,87 +51,82 @@
           <h2>Booking at Happy Paw</h2>
           <p>Your dog deserves a gentle touch and a great look. Book your grooming today.</p>
         </section>
-
+        <!-- booking form start -->
         <section class="booking-form">
-<!-- booking form start -->
-            <form>
-              <!-- first and last name -->
-              <div class="form-input-flex">
-                <div class="input-flex">
-                  <label for="firstname">First Name</label>
-                  <input class="input-box" type="text" placeholder="Your first name" required />
-                </div>
-                <div class="input-flex">
-                  <label for="lastname">Last Name</label>
-                  <input class="input-box" type="text" placeholder="Your last name" required />
-                </div>
+          <form>
+            <!-- first and last name -->
+            <div class="form-input-flex">
+              <div class="input-flex">
+                <label for="firstname">First Name</label>
+                <input class="input-box" type="text" placeholder="Your first name" required />
               </div>
+              <div class="input-flex">
+                <label for="lastname">Last Name</label>
+                <input class="input-box" type="text" placeholder="Your last name" required />
+              </div>
+            </div>
 
-              <!-- phone and email -->
-              <div class="form-input-flex">
-                <div class="input-flex">
-                  <label for="email">Email Address</label>
-                  <input class="input-box" type="email" placeholder="youremail@email.com" required />
-                </div>
-                <div class="input-flex">
-                  <label for="phonenumber">Phone No.</label>
-                  <input class="input-box" type="text" placeholder="+353-1234567" required />
-                </div>
+            <!-- phone and email -->
+            <div class="form-input-flex">
+              <div class="input-flex">
+                <label for="email">Email Address</label>
+                <input class="input-box" type="email" placeholder="youremail@email.com" required />
               </div>
+              <div class="input-flex">
+                <label for="phonenumber">Phone No.</label>
+                <input class="input-box" type="text" placeholder="+353-1234567" required />
+              </div>
+            </div>
 
-              <!-- dogs name -->
-              <div class="form-input-flex">
-                <div class="input-flex">
-                  <label for="dogname">Dog's Name</label>
-                  <input class="input-box" type="text" placeholder="Your dog's name" required />
-                </div>
+            <!-- dogs name -->
+            <div class="form-input-flex">
+              <div class="input-flex">
+                <label for="dogname">Dog's Name</label>
+                <input class="input-box" type="text" placeholder="Your dog's name" required />
               </div>
+            </div>
 
-              <!-- date/time/service of appointment -->
-              <div class="form-input-flex date-time-service">
-                <div class="input-flex">
-                  <label for="date">Date of Appointment</label>
-                  <input class="input-box" type="date" placeholder="Your dog's name" required />
-                </div>
-                <div class="input-flex">
-                  <label for="time">Time</label>
-                  <input class="input-box" type="time" required />
-                </div>
-                <div class="input-flex">
-                  <label for="service">Service Required</label>
-                  <select class="input-box" required>
-                    <option value="">Select a service</option>
-                    <option>Full Groom</option>
-                    <option>Bath &amp; Blow Dry</option>
-                    <option>Mini Groom</option>
-                    <option>Puppy's First Groom</option>
-                    <option>Deshedding Treatment</option>
-                    <option>Pawdicure</option>
-                  </select>
-                </div>
+            <!-- date/time/service of appointment -->
+            <div class="form-input-flex date-time-service">
+              <div class="input-flex">
+                <label for="date">Appointment Date</label>
+                <input class="input-box" type="date" placeholder="Your dog's name" required />
               </div>
+              <div class="input-flex">
+                <label for="time">Time</label>
+                <input class="input-box" type="time" required />
+              </div>
+              <div class="input-flex">
+                <label for="service">Service Required</label>
+                <select class="input-box" required>
+                  <option value="">Select a service</option>
+                  <option>Full Groom</option>
+                  <option>Bath &amp; Blow Dry</option>
+                  <option>Mini Groom</option>
+                  <option>Puppy's First Groom</option>
+                  <option>Deshedding Treatment</option>
+                  <option>Pawdicure</option>
+                </select>
+              </div>
+            </div>
 
               <!-- additional comments -->
-                <div class="form-input-flex">
-                  <div class="input-flex">
-                   <label for="comments">Additonal Notes</label>
-                    <textarea rows="5" class="input-box" placeholder="Enter any additional notes or information that we may need to know"></textarea>
-                  </div>
+              <div class="form-input-flex">
+                <div class="input-flex">
+                  <label for="comments">Additonal Notes</label>
+                  <textarea maxlength="250" rows="8" class="input-box" placeholder="Enter any additional notes or information that we may need to know"></textarea>
                 </div>
-                <div class="consent-flex">                  
-                 
-                  <label class="consent"> <p>I consent to Happy Paw Terms &amp; Conditions.</p></label>
-                  <input type="checkbox" class="checkbox" required/>
-                </div>
+              </div>
 
-      </form>
-      <!-- booking form end -->
+              <!-- consent checkbox -->
+              <div class="consent-flex">                  
+                <label class="consent"> <p>I consent to Happy Paw Terms &amp; Conditions.</p></label>
+                <input type="checkbox" class="checkbox" required/>
+                <button class="submit-btn">Submit</button>
+              </div>
+            </form>
         </section>
-
-
-                
-
-
+        <!-- booking form end -->
       </main>
     </div>
   </div>
