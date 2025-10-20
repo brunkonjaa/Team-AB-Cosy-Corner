@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="/Happy Paw/css/about.css">
     <!-- external fonts -->
       <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,401,500,501,700,701&display=swap" rel="stylesheet"> 
+    <!-- google icons -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"/> 
+
 
 </head>
 <body>
@@ -15,14 +18,19 @@
     <div class="container">
         <!-- header content -->
         <header>
-            <h1>Happy Paw</h1>
+            <h1>Happy Paw <span class="material-symbols-rounded">pets</span></h1>
             <!-- navigation menu -->
             <nav class="nav-bar">
-                <button><span>1</span></button>
-                <button><span>2</span></button>
-                <button><span>3</span></button>
-                <button><span>4</span></button>
-                <button><span>5</span></button> 
+                <!-- home -->
+                <button><a href="../index.html" data-page-link="home"><span class="material-symbols-rounded">home</span></a></button>
+                <!-- about -->
+                <button><a href="about.html" data-page-link="about"><span class="material-symbols-rounded">info</span></a></button>
+                <!-- booking -->
+                <button><a href="../booking/booking.html" data-page-link="booking"><span class="material-symbols-rounded">calendar_add_on</span></a></button>
+                <!-- services -->
+                <button><a href="../services/services.html" data-page-link="contact"><span class="material-symbols-rounded">self_care</span></a></button>
+                <!-- contact -->
+                <button><a class="tooltip tooltiptext" href="../contact/contact.html" data-page-link="contact"><span class="material-symbols-rounded">phone</span></a></button> 
             </nav>
         </header>
 
