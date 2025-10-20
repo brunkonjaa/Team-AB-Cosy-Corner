@@ -9,38 +9,135 @@
   <title>Happy Paw</title>
 
   <!-- External stylesheet -->
-  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/about-booking.css" />
+  <link rel="stylesheet" href="../css/forms (form styling - booking, contact).css">
+
+  <!-- external fonts -->
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,401,500,501,700,701&display=swap" rel="stylesheet"> 
+  <!-- google icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"/> 
 </head>
 
 <body>
+  <div class="container">
   <!-- Site header with logo and navigation -->
-  <header>
-    <h1 class="site-title">Happy Paw</h1>
-
-    <nav id="primary-navigation" class="nav-links" data-nav-links aria-label="Primary navigation">
-      <a href="../index.html" data-page-link="home">Home</a>
-      <a href="../about/about.html" data-page-link="about">About</a>
-	  <a href="booking.html" data-page-link="booking">Booking</a>
-	  <a href="../contact/contact.html" data-page-link="contact">Contact</a>
-      <a href="../services/services.html" data-page-link="services">Services</a>
-    </nav>
-  </header>
+        <header>
+            <h1>Happy Paw <span class="material-symbols-rounded">pets</span></h1>
+            <!-- navigation menu -->
+            <nav class="nav-bar">
+                <!-- home -->
+                <button><a href="../index.html" data-page-link="home"><span class="material-symbols-rounded">home</span></a></button>
+                <!-- about -->
+                <button><a href="../about/about.html" data-page-link="about"><span class="material-symbols-rounded">info</span></a></button>
+                <!-- booking -->
+                <button><a href="../booking/booking.html" data-page-link="booking"><span class="material-symbols-rounded">calendar_add_on</span></a></button>
+                <!-- services -->
+                <button><a href="../services/services.html" data-page-link="contact"><span class="material-symbols-rounded">self_care</span></a></button>
+                <!-- contact -->
+                <button><a class="tooltip tooltiptext" href="../contact/contact.html" data-page-link="contact"><span class="material-symbols-rounded">phone</span></a></button> 
+            </nav>
+        </header>
 
   <!-- Main page -->
-  <<main>
-  <section class="center-image">
-    <img src="../images/dogs/mydog.jpg" alt="Happy dog after grooming">
-  </section>
+   <div class="main-content">
+      <main class="main-section">
+        <!-- image -->
+        <section class="center-image">
+          <img src="../images/dogs/dog-services.jpg" alt="Happy dog after grooming">
+        </section>
 
-  <section>
-    <h2>Welcome to Happy Paw</h2>
-    <p>Your dog deserves a gentle touch and a great look. Book your grooming today.</p>
-  </section>
-</main>
+      <!-- heading and intro to booking -->
+        <section>
+          <h2>Booking at Happy Paw</h2>
+          <p>Your dog deserves a gentle touch and a great look. Book your grooming today.</p>
+        </section>
 
+        <section class="booking-form">
+<!-- booking form start -->
+            <form>
+              <!-- first and last name -->
+              <div class="form-input-flex">
+                <div class="input-flex">
+                  <label for="firstname">First Name</label>
+                  <input class="input-box" type="text" placeholder="Your first name" required />
+                </div>
+                <div class="input-flex">
+                  <label for="lastname">Last Name</label>
+                  <input class="input-box" type="text" placeholder="Your last name" required />
+                </div>
+              </div>
+
+              <!-- phone and email -->
+              <div class="form-input-flex">
+                <div class="input-flex">
+                  <label for="email">Email Address</label>
+                  <input class="input-box" type="email" placeholder="youremail@email.com" required />
+                </div>
+                <div class="input-flex">
+                  <label for="phonenumber">Phone No.</label>
+                  <input class="input-box" type="text" placeholder="+353-1234567" required />
+                </div>
+              </div>
+
+              <!-- dogs name -->
+              <div class="form-input-flex">
+                <div class="input-flex">
+                  <label for="dogname">Dog's Name</label>
+                  <input class="input-box" type="text" placeholder="Your dog's name" required />
+                </div>
+              </div>
+
+              <!-- date/time/service of appointment -->
+              <div class="form-input-flex date-time-service">
+                <div class="input-flex">
+                  <label for="date">Date of Appointment</label>
+                  <input class="input-box" type="date" placeholder="Your dog's name" required />
+                </div>
+                <div class="input-flex">
+                  <label for="time">Time</label>
+                  <input class="input-box" type="time" required />
+                </div>
+                <div class="input-flex">
+                  <label for="service">Service Required</label>
+                  <select class="input-box" required>
+                    <option value="">Select a service</option>
+                    <option>Full Groom</option>
+                    <option>Bath &amp; Blow Dry</option>
+                    <option>Mini Groom</option>
+                    <option>Puppy's First Groom</option>
+                    <option>Deshedding Treatment</option>
+                    <option>Pawdicure</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- additional comments -->
+                <div class="form-input-flex">
+                  <div class="input-flex">
+                   <label for="comments">Additonal Notes</label>
+                    <textarea rows="5" class="input-box" placeholder="Enter any additional notes or information that we may need to know"></textarea>
+                  </div>
+                </div>
+                <div class="consent-flex">                  
+                 
+                  <label class="consent"> <p>I consent to Happy Paw Terms &amp; Conditions.</p></label>
+                  <input type="checkbox" class="checkbox" required/>
+                </div>
+
+      </form>
+      <!-- booking form end -->
+        </section>
+
+
+                
+
+
+      </main>
+    </div>
+  </div>
   <!-- Site footer -->
   <footer>
-    <p>&copy; 2025 My Website | All rights reserved.</p>
+    &copy; 2025 My Website | All rights reserved.
   </footer>
 </body>
 </html>

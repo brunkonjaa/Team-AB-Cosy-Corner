@@ -1,25 +1,5 @@
-/* declare colour vars */
-:root {
-    /* debug colours */
-    --debug1:#06c;
-    --debug2:#a3f;
-    --debug3: red;
-    --white: #f9fbf6;
+@import "main (global styles - navigation, layout, footer, fonts, colours).css";
 
-    /* primary colours */
-    --bg_colour: rgb(231, 227, 222) ;                     /* main background colour*/
-    --banner: rgb(188, 108, 96);                /* header banner */
-    --title: #f9f9f9;                           /* main heading/title colours */
-    --p: #3d2a33;                             /* main paragraph font colour */
-
-    /* secondary colours */
-    --faint:rgb(134, 134, 134);
-    --transparent:transparent;
-    --secondary_colour: rgb(188, 108, 96);
-    --shadow: rgba(1, 1, 1, 0.05);
-
-    /* other */
-}
 
 /* google icons */
 .material-symbols-rounded {
@@ -35,7 +15,12 @@ h1 > .material-symbols-rounded {
 }
 
 /* Responsive design for mobile screens */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+    body{
+    width: 100vw !important;
+    overflow-x: hidden !important;
+    }
+
     header {
         flex-direction: column;
         text-align: center;
@@ -49,40 +34,35 @@ h1 > .material-symbols-rounded {
     }
 
     main {
-        margin-top: 30px;
-        width: 100%;
-        height: auto;
         text-align: left;
-
+        width: 90%;
     }
      p {
         overflow-wrap: break-word;
     }
-    .all-main-content {
-        margin: 0;
+    .main-content {
+        gap: 1rem !important;
+        padding: 0.5rem;
         flex-direction: column;
-        width: 100%;
-        align-items: center;
-        justify-content: space-evenly;
-        gap: 0.5rem !important;
+        height: 100% !important;
     }
 
     aside {
-        padding: 1rem !important;
+        padding: 0.5rem !important;
         border-left: none !important;
-        border-top: solid 1px var(--secondary_colour);
-        width: 90%;
-    }
-
-    .main-bg {
-        flex-direction: column;
-        height: auto;
     }
 
     footer {
         font-size: 0.7rem;
         padding: 0.5rem;
     }
+
+    .main-content, .main-bg, main, .main-section, .side-section {
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box;
+    margin-left: 0 !important;
+}
 }
 
 /* all elements */
@@ -97,7 +77,7 @@ a, a:hover, a:active {
 
 body {
     background-color: var(--bg_colour);
-    font-family: 'Arial', sans-serif;
+    font-family: 'Times', sans-serif;
     height: 100vh;
     width: 100%;
 }
@@ -132,21 +112,20 @@ header {
     justify-content: space-between;             /* space between h1 and nav-bar in header*/
 }
 
-/* main content */
-main {
+/* main content (about) */
+/* main {
     text-align: justify;
-    width: 100%;
     height: auto;
-}
+} */
 
 aside {
-    width: 100%;
+    line-height: 0em;
     padding: 0 0 0 5rem;
     border-left: solid 1px var(--secondary_colour);
 }
 
 aside > h3 {
-    margin-bottom: 5px;
+    margin-bottom: 1rem;
 }
 
 aside > ul {
@@ -155,6 +134,8 @@ aside > ul {
 
  /* footer */
 footer {
+    bottom: 0;
+    width: 100%;
     padding: 1rem;
     text-align: center;                         /* centre footer text */
     font-size: 0.8rem;
@@ -196,31 +177,47 @@ button > a:hover {
     margin: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;             /* space between elements in container*/
-    height: 100vh;
+    justify-content: space-evenly;             /* space between elements in container*/
+
+
 }
-.main-bg {
-    display: flex;
-    margin: 15px auto;
-    background-color: var(--white);
-    width: 90%;
-    border-radius: 1rem;
-    height: 600px;
-    box-shadow: 0px 1px 5px var(--shadow);
-}
+
 .main-section {
     max-width: 600px;        /* optional, prevents super-wide content */
     width: 100%;
 }
 
-.all-main-content {
-    margin: auto;
-    max-width: 1100px;        /* optional, prevents super-wide content */
+/* .all-main-content {            // need to optimise the code pls ignore for now......
+    margin: 15px auto;
+    padding: 2rem;
+    max-width: 1100px;       
     width: 100%;
+    height: 50%;
+    max-height: 600px;
+    background-color: var(--white);
+    border-radius: 1rem;
+    box-shadow: 0px 1px 5px var(--shadow);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    gap: 4rem;
+    gap: 2rem;
+} */
+
+.main-content {
+    display: flex;
+    gap: 3rem;
+    justify-self: center;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    margin: 15px auto;
+    max-width: 1100px;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 12px var(--shadow);
+    text-align: justify;
 }
 
 /* navigation bar within header */
@@ -246,3 +243,100 @@ button > a:hover {
     height: 40px;
     border-bottom: solid 0px var(--white);
 }
+
+/* Centered image section */
+.center-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+}
+
+.center-image img {
+  max-width: 50%;        /* scales nicely on all devices */
+  height: auto;
+  border-radius: 12px;    /* optional: soft edges */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* soft shadow for depth */
+}
+
+/* FORM BOOKING */
+form {
+    height: 55vh;
+}
+.booking-form {         /*need to add to media query */
+    padding: 40px;
+    max-width: 600px;
+    border-bottom: solid 1px var(--secondary_colour) ;
+}
+
+.input-flex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-input-flex {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+}
+
+.form-input-flex > .input-box {
+    width: 50%;
+}
+main > section > h2, main> section> p{
+    text-align: center;
+}
+label {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 800;
+    color: var(--secondary_colour);
+    margin-bottom: 8px;
+}
+input{
+    background-color: var(--transparent);
+    color: var(--p);
+    font-family: 'Satoshi', sans-serif;
+}
+.input-box {
+    height: 100%;
+    padding: 10px 22px;
+    border: 1px solid var(--secondary_colour);
+    border-radius: 0.5rem;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.input-box::placeholder{
+    font-family: 'Satoshi', sans-serif;
+    color: var(--faint);
+}
+
+select {
+    background-color: var(--transparent);
+    color: var(--faint);
+    font-family: 'Satoshi', sans-serif;
+}
+
+.date-time-service {
+    width: 100%;
+    gap: 0.5rem;
+    text-align: left;
+}
+
+.consent > p {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--secondary_colour);
+    align-self: center;
+}
+
+.consent-flex {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+}
+
+
