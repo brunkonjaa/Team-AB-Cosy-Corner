@@ -222,7 +222,7 @@ header {
     gap: 0.3rem;
     flex-direction: column;
     align-items: center;
-    /*min-height: 50px;  Set this to fit icon plus text */
+    /*  min-height: 50px; Set this to fit icon plus text */
     justify-content: center;
 }
 
@@ -230,7 +230,7 @@ header {
 .nav-icon-label {
     font-family: 'Satoshi', sans-serif;
     color: var(--white);
-    font-size: 0.8rem;
+    font-size: 1.6rem;                         /* <------------ Change back size of label text, was 0.8rem. Alex */
     transition: opacity 0.2s;
     height: 1em;        /* Always reserve space */
     opacity: 0;
@@ -247,6 +247,8 @@ header {
 /* all span elements i.e. icons, in nav-bar class */
 .nav-bar > span {
     padding: 10px;
+    position: center;
+
 }
 
 /* all buttons in nav bar */
@@ -256,12 +258,20 @@ header {
     padding: 10px;
     width: 40px;
     height: 40px;
+    position: center;
+    
 }
 
 /* add bottom line on hover of nav icons */
 .nav-bar > button > a:hover {
     border-bottom: solid 2px var(--white);
     transition: ease-in-out 100ms; 
+}
+
+/* size of material icons in nav buttons */      /* <------------ Made the icons bigger. Remove or comment the whole blow to revert Alex */
+.nav-btn .material-symbols-rounded {
+  font-size: 50px; /* change to whatever size you like */
+  line-height: 1;  /* keeps it vertically centered */
 }
 
 /* ======== FOOTER =========*/
@@ -444,4 +454,30 @@ textarea {
 .submit-btn:active {
    color: var(--secondary_colour);                     /* change font colour when button is active*/
 }
+
+/* Toast styling - Alex v1.0 */
+  .toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 14px;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.4s ease, bottom 0.4s ease;
+  }
+
+  .toast.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 60px;
+  }
+
 /* =========                      Appointment Form END  ========= */

@@ -126,7 +126,7 @@ main {
 }
 
 /* Footer fixed at bottom */
-footer {
+/*footer {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -137,7 +137,31 @@ footer {
   padding: 1rem 0;
   font-size: 0.9rem;
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}*/
+
+/* Retractable footer - Alex v1.0*/
+
+footer {
+  position: fixed;
+  bottom: -60px; /* hidden below the screen */
+  left: 0;
+  width: 100%;
+  background-color: #c8b6a6;
+  color: #3a3a3a;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+  transition: bottom 0.3s ease-in-out;
+  z-index: 1000;
 }
+
+/* visible state */
+footer.show {
+  bottom: 0;
+}
+
+/* end of the footer */
 
 /* Responsive layout for small screens */
 @media (max-width: 600px) {
@@ -303,3 +327,30 @@ footer {
   margin-top: 15px;
   font-size: 0.9rem;
 }
+/* End of Gallery styling */
+
+/* Contact page styling */
+/* Toast styling - Alex v1.0 */
+  .toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 14px;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.4s ease, bottom 0.4s ease;
+  }
+
+  .toast.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 60px;
+  }

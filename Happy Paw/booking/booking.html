@@ -53,6 +53,13 @@
                         About
                         </span>
                     </div>
+                    <!-- Gallery -->
+                    <div class="nav-btn">
+                        <button class="nav-btn"><a href="../gallery/gallery.html" data-page-link="gallery"><span class="material-symbols-rounded">collections</span></a>
+                        </button>
+                        <span class="nav-icon-label" id="gallery-text">Gallery</span>
+                    </div>
+
                     <!-- booking -->
                     <div class="nav-btn">
                         <button class="nav-btn"><a href="../booking/booking.html" data-page-link="booking"><span class="material-symbols-rounded">calendar_add_on</span></a>
@@ -62,7 +69,7 @@
 
                     <!-- services -->
                     <div class="nav-btn">
-                        <button type="button"><span class="material-symbols-rounded">self_care</span></button>
+                        <button type="button"><a href="../services/services.html" data-page-link="services"><span class="material-symbols-rounded">self_care</span></a></button>
                         <span class="nav-icon-label" id="services-text">
                         Services
                         </span>
@@ -93,7 +100,7 @@
 
             <!-- BOOKING FORM START -->
             <section class="booking-form">
-                <form>
+                <form id="contactForm" onsubmit="showToast(event)">
                 <!-- first and last name -->
                     <div class="form-row">
                         <div class="label-input-col">
@@ -165,6 +172,8 @@
                         <button class="submit-btn">Submit</button>
                     </div>
                 </form>
+                <div id="toast" class="toast">✅ Thank you! Your booking request has been sent. Please check your email for the confirmation</div>
+                <script src="../js/contact.js"></script>
             </section>
             <!-- BOOKING FORM ENDS -->
         </div>

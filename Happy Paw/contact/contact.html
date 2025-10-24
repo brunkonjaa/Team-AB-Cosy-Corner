@@ -12,11 +12,12 @@
     <h1 class="site-title">Happy Paw</h1>
 
     <nav class="nav-links" aria-label="Primary navigation">
-      <a href="../index.html">Home</a>
-      <a href="../about/about.html">About</a>
-	  <a href="../booking/booking.html">Booking</a>
-	  <a href="contact.html">Contact</a>
-      <a href="../services/services.html">Services</a>
+      <a href="../index.html" data-page-link="home">Home</a>
+      <a href="../about/about.html" data-page-link="about">About</a>
+      <a href="../gallery/gallery.html" data-page-link="gallery">Gallery</a>
+	    <a href="../booking/booking.html" data-page-link="booking">Booking</a>
+	    <a href="../contact/contact.html" data-page-link="contact">Contact</a>
+      <a href="../services/services.html" data-page-link="services">Services</a>
     </nav>
   </header>
 
@@ -28,7 +29,7 @@
         or want to collaborate on a community event, our team is happy to help.
       </p>
 
-      <form>
+      <form id="contactForm" onsubmit="showToast(event)">
         <div class="form-row">
           <label>Full name *</label>
           <input type="text" placeholder="Your name" required />
@@ -61,6 +62,9 @@
 
         <button type="submit" class="primary-btn">Send Message</button>
       </form>
+      <div id="toast" class="toast">✅ Thank you! Your message has been sent.</div>
+      <script src="../js/contact.js"></script>
+      
     </section>
 
     <aside class="contact-info">
@@ -77,7 +81,7 @@
       <p><strong>Phone:</strong> +353 (0)12 345 6789</p>
       <p><strong>Email:</strong> hello@something.ie</p>
 
-      <button class="secondary-btn">Book A Visit</button>
+      <button class="secondary-btn" onclick="window.location.href='../booking/booking.html';">Book A Visit</button>
     </aside>
   </main>
 
