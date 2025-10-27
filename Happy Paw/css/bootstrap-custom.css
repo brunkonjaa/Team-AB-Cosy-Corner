@@ -1,0 +1,638 @@
+/* ================================================
+   Happy Paw Bootstrap Custom Styling
+   Author: Team AB - Cosy Corner
+   Date: October 2025
+   Last Updated: October 27, 2025
+   
+   EXTERNAL RESOURCES USED:
+   
+   Framework: Bootstrap 5.3.2
+   Author: Bootstrap Team (Twitter, Inc.)
+   Source: https://getbootstrap.com
+   CDN: https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css
+   License: MIT License
+   Usage: This file customizes Bootstrap component styling
+   Documentation: https://getbootstrap.com/docs/5.3/
+   
+   Icons: Google Material Symbols Rounded
+   Author: Google
+   Source: https://fonts.google.com/icons
+   CDN: https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded
+   License: Apache License 2.0
+   Usage: Navigation icons with custom hover effects
+   Added: October 27, 2025
+   
+   CHANGES LOG (October 27, 2025):
+   1. Navbar Background Color Update:
+      - Changed from: linear-gradient(135deg, #a8d5e2 0%, #c8e6c9 100%)
+      - Changed to: #C85A4B (solid coral/salmon color)
+      - Reason: Match branding requirements and screenshot design
+      - Updated box-shadow to complement new color
+   
+   2. Icon Navigation Implementation:
+      - Added .navbar-icons styling for icon-based navigation
+      - Icon size: 1.5rem with scale(1.2) on hover
+      - Tooltip system: coral background (#c17a74), positioned below icons
+      - Tooltip arrow: 6px triangle pointing up
+      - Active state: rgba(193, 122, 116, 0.3) background
+      - Mobile responsive: text shown inline with icons on <992px screens
+   
+   Design Philosophy:
+   Soft, calming aesthetic with coral/salmon accent colors.
+   Color psychology applied for pet care industry - warm coral for trust,
+   approachable design with rounded corners (2025 UX trends).
+   
+   All color values, transitions, and customizations are original work
+   by Team AB. Bootstrap classes are used as intended per framework
+   documentation and do not require individual citation.
+   ================================================ */
+
+/* ================================================
+   CSS CUSTOM PROPERTIES - Original Design
+   ================================================ */
+
+:root {
+  /* Calming Pastel Palette - Original color scheme by Team AB */
+  --hp-primary: #a8d5e2;        /* Soft sky blue - trust & calm */
+  --hp-primary-dark: #7eb8cc;   /* Slightly deeper blue */
+  --hp-secondary: #c8e6c9;      /* Gentle sage green - natural & refreshing */
+  --hp-accent: #e1bee7;         /* Soft lavender - premium & soothing */
+  --hp-light: #f5f5f5;          /* Off-white for backgrounds */
+  --hp-muted: #b0b0b0;          /* Soft gray for secondary text */
+  --hp-text: #4a4a4a;           /* Warm dark gray instead of black */
+  --hp-white: #ffffff;
+  
+  /* Rounded corner standard */
+  --hp-radius: 1.25rem;         /* 20px - generous rounded corners */
+  --hp-radius-sm: 0.75rem;      /* 12px - smaller elements */
+  --hp-radius-lg: 2rem;         /* 32px - large cards */
+  
+  /* Gentle transitions */
+  --hp-transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ================================================
+   NAVBAR - Customized Bootstrap Navbar Component
+   Base component: https://getbootstrap.com/docs/5.3/components/navbar/
+   Modified: Custom solid background, soft shadow, custom transitions,
+   white text with hover effects, rounded dropdown menus
+   
+   UPDATED October 27, 2025:
+   Background changed from gradient to solid coral color #C85A4B
+   Previous: linear-gradient(135deg, #a8d5e2 0%, #c8e6c9 100%)
+   Current: #C85A4B (coral/salmon - matches branding screenshot)
+   ================================================ */
+
+.navbar-happy-paw {
+  background: #C85A4B !important;  /* Updated Oct 27, 2025 - Coral/salmon solid color */
+  box-shadow: 0 4px 12px rgba(200, 90, 75, 0.25);  /* Updated shadow to match coral */
+  padding: 1rem 1.5rem;
+  transition: var(--hp-transition);
+}
+
+.navbar-happy-paw .navbar-brand {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--hp-white) !important;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-happy-paw .nav-link {
+  color: var(--hp-white) !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem !important;
+  border-radius: var(--hp-radius-sm);
+  transition: var(--hp-transition);
+}
+
+.navbar-happy-paw .nav-link:hover,
+.navbar-happy-paw .nav-link:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.navbar-happy-paw .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+}
+
+.navbar-toggler {
+  border: 2px solid var(--hp-white);
+  border-radius: var(--hp-radius-sm);
+  padding: 0.5rem 0.75rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+}
+
+/* Hamburger icon customization - Original SVG color modification */
+.navbar-toggler-icon {
+  /* White hamburger icon for visibility on gradient background - Original modification */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Dropdown menus with soft styling - Original customization */
+.navbar-happy-paw .dropdown-menu {
+  border-radius: var(--hp-radius);
+  border: none;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.navbar-happy-paw .dropdown-item {
+  border-radius: var(--hp-radius-sm);
+  padding: 0.75rem 1rem;
+  color: var(--hp-text);
+  transition: var(--hp-transition);
+}
+
+.navbar-happy-paw .dropdown-item:hover {
+  background-color: var(--hp-primary);
+  color: var(--hp-white);
+  transform: translateX(4px);
+}
+
+/* ================================================
+   ICON NAVIGATION - Custom Icon-Based Nav Design
+   ADDED: October 27, 2025
+   
+   Implementation Details:
+   - Uses Google Material Symbols Rounded font icons
+   - Icons: home, info, grid_view, collections, event, call
+   - Icon size: 1.5rem (default), scales to 1.2x on hover
+   - Tooltip background: #c17a74 (coral) matching branding
+   - Tooltip positioning: Below icon with CSS arrow pointer
+   - Active state: rgba(193, 122, 116, 0.3) background highlight
+   
+   Responsive Design:
+   - Desktop (≥992px): Icons only, text appears on hover as tooltip
+   - Mobile (<992px): Icons + text shown inline, no tooltip needed
+   
+   CSS Classes:
+   - .navbar-icons: Applied to <ul> for icon nav styling
+   - .nav-icon: Applied to each nav link with icon
+   - .icon: Wraps Material Symbol for sizing/transitions
+   - .nav-text: Hidden by default, shows as tooltip on hover
+   
+   Bootstrap Integration:
+   - Works with Bootstrap 5.3.2 navbar structure
+   - Compatible with .navbar-expand-lg responsive behavior
+   - Maintains dropdown functionality for Services menu
+   ================================================ */
+
+/* Icon navigation - show icons, hide text by default */
+.navbar-icons .nav-icon .icon {
+  font-size: 1.5rem;
+  display: inline-block;
+  transition: var(--hp-transition);
+}
+
+.navbar-icons .nav-icon .nav-text {
+  display: none;
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #c17a74;
+  color: var(--hp-white);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--hp-radius-sm);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(193, 122, 116, 0.3);
+  z-index: 1000;
+}
+
+/* Tooltip arrow */
+.navbar-icons .nav-icon .nav-text::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #c17a74;
+}
+
+/* Show tooltip on hover */
+.navbar-icons .nav-icon:hover .nav-text {
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) translateY(2px);
+}
+
+/* Icon hover effects */
+.navbar-icons .nav-icon:hover .icon {
+  transform: scale(1.2);
+  filter: drop-shadow(0 2px 4px rgba(193, 122, 116, 0.4));
+}
+
+/* Active state for icons */
+.navbar-icons .nav-icon.active {
+  background-color: rgba(193, 122, 116, 0.3);
+}
+
+.navbar-icons .nav-icon.active .icon {
+  transform: scale(1.1);
+}
+
+/* Dropdown toggle specific styling */
+.navbar-icons .dropdown-toggle::after {
+  display: none;
+}
+
+/* Position relative for tooltip positioning */
+.navbar-icons .nav-item {
+  position: relative;
+}
+
+/* Mobile responsive - show text on mobile */
+@media (max-width: 991px) {
+  .navbar-icons .nav-icon .nav-text {
+    display: inline;
+    position: static;
+    transform: none;
+    background: none;
+    color: var(--hp-white);
+    padding: 0;
+    margin-left: 0.5rem;
+    box-shadow: none;
+    opacity: 1;
+    font-size: 1rem;
+  }
+  
+  .navbar-icons .nav-icon .nav-text::before {
+    display: none;
+  }
+  
+  .navbar-icons .nav-icon .icon {
+    font-size: 1.2rem;
+  }
+}
+
+/* ================================================
+   SERVICE CARDS - Customized Bootstrap Card Component
+   Base component: https://getbootstrap.com/docs/5.3/components/card/
+   Modified: Added hover lift effect, custom border-radius, soft shadows,
+   image scaling on hover, custom padding and typography.
+   Layout uses Bootstrap grid system as intended.
+   ================================================ */
+
+.service-card {
+  border: none !important;
+  border-radius: var(--hp-radius-lg) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: var(--hp-transition);
+  overflow: hidden;
+  height: 100%;
+  background: var(--hp-white);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(168, 213, 226, 0.25);
+}
+
+.service-card img {
+  border-radius: var(--hp-radius-lg) var(--hp-radius-lg) 0 0;
+  height: 200px;
+  object-fit: cover;
+  transition: var(--hp-transition);
+}
+
+.service-card:hover img {
+  transform: scale(1.05);
+}
+
+.service-card .card-body {
+  padding: 1.75rem;
+}
+
+.service-card .card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--hp-primary-dark);
+  margin-bottom: 1rem;
+}
+
+.service-card .card-text {
+  color: var(--hp-text);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.service-card .btn {
+  margin-top: 1rem;
+  border-radius: var(--hp-radius);
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  transition: var(--hp-transition);
+}
+
+/* ================================================
+   PRICING TABLES - Customized Bootstrap Cards & List Groups
+   Base components: 
+   - Cards: https://getbootstrap.com/docs/5.3/components/card/
+   - List Groups: https://getbootstrap.com/docs/5.3/components/list-group/
+   Modified: Custom gradient headers, featured card scaling and border,
+   checkmark styling, custom hover effects, soft shadows.
+   Pricing table layout pattern inspired by standard SaaS comparison tables.
+   All content and styling modifications are original.
+   ================================================ */
+
+.pricing-card {
+  border: none !important;
+  border-radius: var(--hp-radius-lg) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: var(--hp-transition);
+  overflow: hidden;
+  background: var(--hp-white);
+  height: 100%;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(200, 230, 201, 0.25);
+}
+
+.pricing-card.featured {
+  border: 3px solid var(--hp-accent) !important;
+  transform: scale(1.05);
+}
+
+.pricing-card.featured:hover {
+  transform: scale(1.08) translateY(-8px);
+}
+
+.pricing-card .card-header {
+  background: linear-gradient(135deg, var(--hp-primary) 0%, var(--hp-secondary) 100%);
+  color: var(--hp-white);
+  border: none;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.pricing-card .card-header h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-card .card-header .price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+.pricing-card .card-header .price-note {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.pricing-card .card-body {
+  padding: 2rem 1.5rem;
+}
+
+.pricing-card .list-group-item {
+  border: none;
+  padding: 0.75rem 0;
+  color: var(--hp-text);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.pricing-card .list-group-item:last-child {
+  border-bottom: none;
+}
+
+.pricing-card .list-group-item i,
+.pricing-card .list-group-item .checkmark {
+  color: var(--hp-secondary);
+  margin-right: 0.75rem;
+  font-weight: 600;
+}
+
+/* ================================================
+   BUTTONS - Customized Bootstrap Button Component
+   Base component: https://getbootstrap.com/docs/5.3/components/buttons/
+   Modified: Custom gradient backgrounds, soft shadows, lift hover effect,
+   changed transition timing from default 0.15s to 0.35s cubic-bezier,
+   custom color schemes per button type (primary, secondary, accent).
+   All color values and hover effects are original modifications.
+   ================================================ */
+
+.btn-happy-primary {
+  background: linear-gradient(135deg, var(--hp-primary) 0%, var(--hp-primary-dark) 100%);
+  border: none;
+  color: var(--hp-white);
+  border-radius: var(--hp-radius);
+  padding: 0.875rem 2rem;
+  font-weight: 600;
+  transition: var(--hp-transition);
+  box-shadow: 0 4px 12px rgba(168, 213, 226, 0.3);
+}
+
+.btn-happy-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(168, 213, 226, 0.4);
+  color: var(--hp-white);
+}
+
+.btn-happy-secondary {
+  background: linear-gradient(135deg, var(--hp-secondary) 0%, #a5d6a7 100%);
+  border: none;
+  color: var(--hp-text);
+  border-radius: var(--hp-radius);
+  padding: 0.875rem 2rem;
+  font-weight: 600;
+  transition: var(--hp-transition);
+  box-shadow: 0 4px 12px rgba(200, 230, 201, 0.3);
+}
+
+.btn-happy-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(200, 230, 201, 0.4);
+  color: var(--hp-text);
+}
+
+.btn-happy-accent {
+  background: linear-gradient(135deg, var(--hp-accent) 0%, #ce93d8 100%);
+  border: none;
+  color: var(--hp-white);
+  border-radius: var(--hp-radius);
+  padding: 0.875rem 2rem;
+  font-weight: 600;
+  transition: var(--hp-transition);
+  box-shadow: 0 4px 12px rgba(225, 190, 231, 0.3);
+}
+
+.btn-happy-accent:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(225, 190, 231, 0.4);
+  color: var(--hp-white);
+}
+
+/* ================================================
+   CAROUSEL - Customized Bootstrap Carousel Component
+   Base component: https://getbootstrap.com/docs/5.3/components/carousel/
+   Modified: Custom styling for testimonial display - centered content,
+   min-height for consistency, rounded container with shadow,
+   custom control button styling with circular backgrounds and hover scale.
+   Content structure (blockquote, customer names) is original design.
+   ================================================ */
+
+.testimonial-carousel {
+  padding: 3rem 0;
+}
+
+.testimonial-carousel .carousel-inner {
+  border-radius: var(--hp-radius-lg);
+  background: var(--hp-white);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  padding: 3rem 2rem;
+}
+
+.testimonial-carousel .carousel-item {
+  text-align: center;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-carousel blockquote {
+  font-family: 'Lora', serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--hp-text);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  max-width: 700px;
+}
+
+.testimonial-carousel .customer-name {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: var(--hp-primary-dark);
+  font-size: 1.1rem;
+}
+
+.testimonial-carousel .pet-name {
+  color: var(--hp-muted);
+  font-size: 0.95rem;
+}
+
+.testimonial-carousel .carousel-control-prev-icon,
+.testimonial-carousel .carousel-control-next-icon {
+  background-color: var(--hp-primary);
+  border-radius: 50%;
+  padding: 1.5rem;
+  transition: var(--hp-transition);
+}
+
+.testimonial-carousel .carousel-control-prev-icon:hover,
+.testimonial-carousel .carousel-control-next-icon:hover {
+  background-color: var(--hp-primary-dark);
+  transform: scale(1.1);
+}
+
+/* ================================================
+   UTILITY CLASSES - Original Helper Classes
+   All utility classes below are original work for consistent spacing,
+   typography, and styling across the Happy Paw website.
+   These complement Bootstrap's utility classes but are custom-designed
+   for this project's specific needs.
+   ================================================ */
+
+.section-padding {
+  padding: 4rem 0;
+}
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--hp-primary-dark);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-family: 'Lora', serif;
+  font-size: 1.25rem;
+  color: var(--hp-text);
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rounded-soft {
+  border-radius: var(--hp-radius) !important;
+}
+
+.rounded-soft-lg {
+  border-radius: var(--hp-radius-lg) !important;
+}
+
+/* ================================================
+   RESPONSIVE ADJUSTMENTS - Original Media Queries
+   Mobile-first responsive design adjustments for tablets and phones.
+   All breakpoint values and responsive modifications are original work
+   tailored to Happy Paw's specific layout needs.
+   ================================================ */
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .pricing-card.featured {
+    transform: scale(1);
+  }
+  
+  .navbar-happy-paw {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-card .card-body,
+  .pricing-card .card-body {
+    padding: 1.25rem;
+  }
+  
+  .btn-happy-primary,
+  .btn-happy-secondary,
+  .btn-happy-accent {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* ================================================
+   MAIN CONTENT ADJUSTMENT (for fixed navbar)
+   ================================================ */
+
+body {
+  padding-top: 76px; /* Adjust based on navbar height */
+}
+
+main {
+  min-height: calc(100vh - 200px);
+}
