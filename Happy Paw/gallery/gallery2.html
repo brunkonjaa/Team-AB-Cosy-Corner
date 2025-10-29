@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Happy Paw</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- link internal css stylesheet -->
+    <link rel="stylesheet" href="../css/about-booking.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/bootstrap-custom.css">
+    <!-- external fonts -->
+      <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,401,500,501,700,701&display=swap" rel="stylesheet"/> 
+    <!-- google icons -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"/> 
+    
+      <!-- scripts - jQuery hosted by google -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../js/nav-bar-script.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Poppins:wght@400;600&display=swap');
+    @import "main.css";
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+ html, body {
+    width: 100vw;
+    overflow-x: hidden;
+}
+body {
+    background-color: var(--bg_colour);             /* main background colour */
+    font-family: 'Times', sans-serif;               /* main font (p)*/
+    width: 100%;
+}
+
+/* ======== TEXT ELEMENTS =========*/
+/* set font for h elements */
+h1, h2, h3 {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 700;
+}
+
+/* set colour for h1 */
+h1 {
+    color: var(--title);
+}
+
+/* set colour for h2 and h3 */
+h2, h3 {
+    color: var(--secondary_colour);
+}
+
+/* paragraph defaults */
+p {
+    color: var(--p);
+    line-height: 2em;
+    overflow-wrap: break-word;
+    text-align: justify;
+}
+
+/* main section h2 */
+main > section > h2 { 
+    text-align: left;
+}
+
+.center-text {
+    text-align: center;
+}
+
+/* ======== HEADER  =========*/
+/* header */
+header {
+    margin-top: 15px;
+    background: var(--banner);                  /* banner bg colour */
+    border-radius: 0;                           /* rounded corners */
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;                        /* centres items in header*/
+    justify-content: space-between;             /* space between h1 and nav-bar in header*/
+}
+
+/* ======== NAVIGATION BAR within header =========*/
+/* nav bar wrapper display in row */
+.nav-bar-row {
+    display: flex;
+    margin-top: 2rem;
+    background-color: var(--transparent);
+    display: flex;                              /* items displayed using flex */
+    justify-content: space-between;
+    text-align: center;
+    gap: 0.3rem;
+}
+
+/* contains the icon and corresponding text (flex-col) */
+.nav-btn {
+    display: flex;
+    gap: 0.3rem;
+    flex-direction: column;
+    align-items: center;
+    /*  min-height: 50px; Set this to fit icon plus text */
+    justify-content: center;
+}
+
+/* labels beneath icons */
+.nav-icon-label {
+    font-family: 'Satoshi', sans-serif;
+    color: var(--white);
+    font-size: 1.6rem;                         /* <------------ Change back size of label text, was 0.8rem. Alex */
+    transition: opacity 0.2s;
+    height: 1em;        /* Always reserve space */
+    opacity: 0;
+    pointer-events: none;
+    min-width: 50px;
+}
+
+/* toggle for active  */    
+.nav-btn.active .nav-icon-label {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* all span elements i.e. icons, in nav-bar class */
+.nav-bar > span {
+    padding: 10px;
+    position: center;
+
+}
+
+/* all buttons in nav bar */
+.nav-bar > button {
+    color: var(--p);
+    background-color: var(--transparent);
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    position: center;
+    
+}
+
+/* add bottom line on hover of nav icons */
+.nav-bar > button > a:hover {
+    border-bottom: solid 2px var(--white);
+    transition: ease-in-out 100ms; 
+}
+
+/* size of material icons in nav buttons */      /* <------------ Made the icons bigger. Remove or comment the whole blow to revert Alex */
+.nav-btn .material-symbols-rounded {
+  font-size: 50px; /* change to whatever size you like */
+  line-height: 1;  /* keeps it vertically centered */
+}
+
+    .main-container {
+      padding-top: 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .title {
+      font-family: 'Lora', serif;
+      font-size: 2.5rem;
+      font-weight: 500;
+      color: #333;
+      text-align: center;
+      margin: 80px 0;
+    }
+
+    .carousel-wrapper {
+      width: 100%;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 2000px;
+      position: relative;
+    }
+
+    .carousel-container {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      transform-style: preserve-3d;
+      transition: transform 1.8s cubic-bezier(0.4, 0, 0.2, 1);  /* speed of the rotation */
+    }
+
+    .carousel-card {
+      position: absolute;
+      width: 300px;
+      height: 400px;
+      left: 0;
+      top: 0;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      cursor: pointer;
+      transition: box-shadow 0.3s;
+    }
+
+    .carousel-card:hover {
+      box-shadow: 0 25px 80px rgba(0,0,0,0.5);
+    }
+
+    .carousel-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      user-select: none;
+    }
+
+    .controls {
+      display: flex;
+      gap: 30px;
+      margin-top: 100px;
+    }
+
+    .btn-control {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: none;
+      background: white;
+      font-size: 30px;
+      cursor: pointer;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .btn-control:hover {
+      transform: scale(1.0);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+
+    .btn-control:active {
+      transform: scale(0.95);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.95);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox.show {
+      display: flex;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 85vh;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+
+    .lb-close {
+      position: absolute;
+      top: -50px;
+      right: 0;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 50px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0;
+    }
+
+    .lb-close:hover {
+      opacity: 0.7;
+    }
+
+    .lb-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      font-size: 50px;
+      padding: 15px 25px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .lb-nav:hover {
+      background: rgba(255,255,255,0.4);
+    }
+
+    .lb-prev {
+      left: 20px;
+    }
+
+    .lb-next {
+      right: 20px;
+    }
+
+    .lb-credit {
+      position: absolute;
+      bottom: -45px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: white;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-wrapper {
+        height: 400px;
+      }
+
+      .carousel-container {
+        width: 250px;
+        height: 330px;
+      }
+
+      .carousel-card {
+        width: 250px;
+        height: 330px;
+      }
+
+      .title {
+        font-size: 2rem;
+      }
+
+      .btn-control {
+        width: 60px;
+        height: 60px;
+        font-size: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-happy-paw fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">🐾 Happy Paw</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto navbar-icons">
+                    <li class="nav-item">
+                        <a class="nav-link nav-icon" href="../index.html" data-tooltip="Home">
+                            <span class="material-symbols-rounded icon">home</span>
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-icon active" aria-current="page" href="../about/about.html" data-tooltip="About">
+                            <span class="material-symbols-rounded icon">info</span>
+                            <span class="nav-text">About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-icon dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-tooltip="Services">
+                            <span class="material-symbols-rounded icon">grid_view</span>
+                            <span class="nav-text">Services</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../services/services-bootstrap.html">All Services</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../services/services-bootstrap.html#full-groom">Full Groom</a></li>
+                            <li><a class="dropdown-item" href="../services/services-bootstrap.html#bath-blowdry">Bath & Blow Dry</a></li>
+                            <li><a class="dropdown-item" href="../services/services-bootstrap.html#mini-groom">Mini Groom</a></li>
+                            <li><a class="dropdown-item" href="../services/services-bootstrap.html#puppy-first">Puppy's First Groom</a></li>
+                            <li><a class="dropdown-item" href="../services/services-bootstrap.html#deshedding">Deshedding Treatment</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-icon" href="../gallery/gallery.html" data-tooltip="Gallery">
+                            <span class="material-symbols-rounded icon">collections</span>
+                            <span class="nav-text">Gallery</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-icon" href="../booking/booking.html" data-tooltip="Booking">
+                            <span class="material-symbols-rounded icon">event</span>
+                            <span class="nav-text">Booking</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-icon" href="../contact/contact.html" data-tooltip="Contact">
+                            <span class="material-symbols-rounded icon">call</span>
+                            <span class="nav-text">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  <div class="main-container">
+    <h1 class="title">Our Furry Friends</h1>
+    
+    <div class="carousel-wrapper">
+      <div class="carousel-container" id="carousel"></div>
+    </div>
+
+    <div class="controls">
+      <button class="btn-control" id="prev">‹</button>
+      <button class="btn-control" id="next">›</button>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lb-close" id="lbClose">×</button>
+      <img class="lightbox-img" id="lbImg" src="" alt="">
+      <button class="lb-nav lb-prev" id="lbPrev">‹</button>
+      <button class="lb-nav lb-next" id="lbNext">›</button>
+      <p class="lb-credit" id="lbCredit"></p>
+    </div>
+  </div>
+
+  <script src="../js/gallery2.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
