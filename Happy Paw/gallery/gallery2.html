@@ -34,7 +34,12 @@
     width: 100vw;
     overflow-x: hidden;
 }
+
+/* FIX: Added body padding so content doesn't hide under the navbar.
+   This makes the page spacing match all other pages (76px offset).
+   Without this, stuff would overlap the red navbar area. */
 body {
+    padding-top: 76px;                              /* navbar offset - matches bootstrap-custom.css */
     background-color: var(--bg_colour);             /* main background colour */
     font-family: 'Times', sans-serif;               /* main font (p)*/
     width: 100%;
@@ -84,6 +89,14 @@ header {
     display: flex;
     align-items: center;                        /* centres items in header*/
     justify-content: space-between;             /* space between h1 and nav-bar in header*/
+}
+
+/* FIX: Set navbar padding so the red bar height matches other pages.
+   This page has inline CSS that overrides the external stylesheet,
+   so we need to copy the padding value here (1rem = 16px top/bottom).
+   Without this, the navbar looked different height than other pages. */
+.navbar-happy-paw {
+    padding: 1rem 1.5rem !important;            /* 16px top/bottom, 24px left/right - matches site-wide */
 }
 
 /* ======== NAVIGATION BAR within header =========*/
@@ -395,7 +408,8 @@ header {
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-icon" href="../gallery/gallery.html" data-tooltip="Gallery">
+                        <!-- Updated: link now points to gallery2.html (revolver gallery) -->
+                        <a class="nav-link nav-icon" href="../gallery/gallery2.html" data-tooltip="Gallery">
                             <span class="material-symbols-rounded icon">collections</span>
                             <span class="nav-text">Gallery</span>
                         </a>
