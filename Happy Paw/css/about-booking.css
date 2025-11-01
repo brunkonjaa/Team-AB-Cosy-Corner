@@ -375,6 +375,13 @@ textarea {
     width: 100%;
     justify-content: center;
 }
+
+.label-input-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+}
 /* form rows                             */
 .form-row {
     width: 100%;
@@ -458,6 +465,7 @@ textarea {
 
 /* Toast styling - Alex v1.0 */
   .toast {
+    font-family: 'Poppins', sans-serif;
     visibility: hidden;
     min-width: 250px;
     background-color: #333;

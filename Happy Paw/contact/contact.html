@@ -61,6 +61,7 @@
   
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/bootstrap-custom.css" />
+  <link rel="stylesheet" href="../css/about-booking.css" />
 </head>
 
 <body>
@@ -140,47 +141,62 @@
     </div>
   </nav>
 
-  <main class="contact-page" style="margin-top: 80px;">
-    <section class="contact-form">
-      <h2>We'd love to hear from you</h2>
-      <p>
+  <main class="contact-page main-section-col text-start" style="margin-top: 80px;">
+    <section class="contact-form booking-form">
+      <h2 class="center-text">We'd love to hear from you</h2>
+      <p class="center-text">
         Whether you have grooming queries, need help planning your dog's first visit,
         or want to collaborate on a community event, our team is happy to help.
       </p>
 
+      <!-- FORM START -->
       <form id="contactForm" onsubmit="showToast(event)">
+        <!-- full name -->
         <div class="form-row">
-          <label>Full name *</label>
-          <input type="text" placeholder="Your name" required />
+          <div class="label-input-col">
+            <label for="firstname">Full Name</label>
+            <input class="input-box" type="text" placeholder="Your name" required />
+          </div>
         </div>
 
+        <!-- email -->
         <div class="form-row">
-          <label>Email *</label>
-          <input type="email" placeholder="you@example.com" required />
+          <div class="label-input-col">
+            <label for="email">Email</label>
+            <input class="input-box" type="text" placeholder="you@example.com" required />
+          </div>
         </div>
 
+        <!-- help list -->
         <div class="form-row">
-          <label>How can we help? *</label>
-          <select required>
-            <option value="">Select a topic</option>
-            <option>Grooming enquiry</option>
-            <option>Booking question</option>
-            <option>General feedback</option>
-          </select>
+          <div class="label-input-col">
+            <label for="help-list">How can we help?</label>
+            <select class="input-box" required>
+              <option value="">Select a topic</option>
+              <option>Grooming enquiry</option>
+              <option>Booking question</option>
+              <option>General feedback</option>
+            </select>
+          </div>
+        </div>
+        
+        <!-- additional comments -->
+        <div class="form-row">
+          <div class="label-input-col">
+              <label for="message">Message</label>
+              <textarea maxlength="250" rows="8" class="input-box" placeholder="Please type your message here..."></textarea>
+          </div>
         </div>
 
-        <div class="form-row">
-          <label>Message *</label>
-          <textarea rows="5" placeholder="Type your message here..." required></textarea>
+         <!-- consent checkbox -->
+        <div class="consent-flex">                  
+          <label class="consent"> <span class="fw-bold">I consent to Happy Paw's Terms &amp; Conditions.<input type="checkbox" class="checkbox" required/></span></label>
+          <button class="submit-btn">Submit</button>
         </div>
-
-        <label class="consent">
-          <input type="checkbox" required />
-          I consent to Happy Paw storing my details for the purpose of this enquiry.
-        </label>
-
-        <button type="submit" class="primary-btn">Send Message</button>
       </form>
+      <!-- FORM END -->
+
+      <!-- Notification pop-up -->
       <div id="toast" class="toast">✅ Thank you! Your message has been sent.</div>
       <script src="../js/contact.js"></script>
       
