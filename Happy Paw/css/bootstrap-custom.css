@@ -88,6 +88,7 @@
   box-shadow: 0 4px 12px rgba(200, 90, 75, 0.25);  /* Updated shadow to match coral */
   padding: 1rem 1.5rem;
   transition: var(--hp-transition);
+  height: 6rem;                       /* 1-11-25 MK fixes sizing consistency issues across pages*/
 }
 
 .navbar-happy-paw .navbar-brand {

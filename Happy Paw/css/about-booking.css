@@ -161,7 +161,7 @@ section > ul {
 /* ======== TEXT ELEMENTS =========*/
 /* set font for h elements */
 h1, h2, h3 {
-    font-family: 'Satoshi', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
 }
 
@@ -228,7 +228,7 @@ header {
 
 /* labels beneath icons */
 .nav-icon-label {
-    font-family: 'Satoshi', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: var(--white);
     font-size: 1.6rem;                         /* <------------ Change back size of label text, was 0.8rem. Alex */
     transition: opacity 0.2s;
@@ -333,7 +333,7 @@ form {
 
 /* reset label on forms */
 label {
-    font-family: 'Satoshi', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 800;
     color: var(--secondary_colour);
     margin-bottom: 8px;
@@ -343,7 +343,7 @@ label {
 input {
     background-color: var(--transparent);
     color: var(--p);
-    font-family: 'Satoshi', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 /*  selection input defaults */
