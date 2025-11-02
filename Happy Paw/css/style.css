@@ -53,7 +53,12 @@ header * {
   z-index: 1;
 }
 
-
+p {
+    line-height: 2em;
+    overflow-wrap: break-word;
+    text-align: justify;
+    margin-bottom: auto;
+}
 
 
 
@@ -146,8 +151,8 @@ footer {
   bottom: -60px; /* hidden below the screen */
   left: 0;
   width: 100%;
-  background-color: #c8b6a6;
-  color: #3a3a3a;
+  background-color: #ecd7c4;
+  color: rgb(113, 63, 55);
   text-align: center;
   padding: 1rem 0;
   font-size: 0.9rem;

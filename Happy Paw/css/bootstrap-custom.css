@@ -278,6 +278,10 @@
   .navbar-icons .nav-icon .icon {
     font-size: 1.2rem;
   }
+
+  .navbar-happy-paw {
+    height: auto;                         /* 1/11/25 MK navbar scale fix */
+  }
 }
 
 /* ================================================
@@ -506,7 +510,7 @@
 .testimonial-carousel .carousel-item {
   text-align: center;
   min-height: 300px;
-  display: flex;
+  /* display: flex;                             // 2/11/25 MK removing display flex fixes overlapping issues */
   align-items: center;
   justify-content: center;
 }
