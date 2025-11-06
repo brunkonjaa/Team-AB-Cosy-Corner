@@ -829,6 +829,7 @@ main {
             border-radius: 30px;
             padding: 4rem;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border: 3px solid rgba(255, 212, 212, 0.5);
             position: relative;
@@ -966,6 +967,7 @@ main {
             padding: 3rem 4rem;
             border-radius: 20px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
             border: 2px solid rgba(212, 133, 106, 0.3);
             text-align: center;
@@ -1043,4 +1045,18 @@ main {
                 transform: translateX(-50%) translateY(-10px);
             }
         }
+
+/* Hero image styling */
+.hero-image {
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Pricing section with gradient background */
+.pricing-section-bg {
+    background: linear-gradient(to bottom, #f5f5f5 0%, #ffffff 100%);
+    margin-top: 3rem;
+    padding: 4rem 15px;
+    border-radius: 2rem;
+}
         /* END OF PARALLAX SCROLLING EFFECT *//* ================================================ */

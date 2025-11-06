@@ -46,8 +46,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Language, smaller screens  -->
   <meta charset="UTF-8" />
+  <!-- Language, smaller screens  -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Title -->
@@ -152,7 +152,7 @@
     </nav>
 
     <!-- WRAP/CONTAIN ALL CONTENT -->
-    <div class="wrap-container" style="margin-top: 80px;">
+    <div class="wrap-container">
         <!-- MAIN SECTION BEGINS -->
         <div class="main-section-col">
             <!-- TOP IMAGE CENTERED -->
@@ -209,11 +209,11 @@
                         </div>
                         <div class="label-input-col">
                             <label for="time">Time</label>
-                            <input class="input-box" type="time" required />
+                            <input class="input-box" type="time" id="time" aria-label="Appointment time" required />
                         </div>
                         <div class="label-input-col">
                             <label for="service">Service Required</label>
-                            <select class="input-box" required>
+                            <select class="input-box" id="service" aria-label="Service selection" required>
                             <option value="">Select a service</option>
                             <option>Full Groom</option>
                             <option>Bath &amp; Blow Dry</option>
@@ -237,7 +237,7 @@
                     <div class="consent-flex">                  
                         <label class="consent"> <span class="fw-bold">I consent to Happy Paw's Terms &amp; Conditions.<input type="checkbox" class="checkbox" required/></span></label>
                         
-                        <button class="submit-btn">Submit</button>
+                        <button class="submit-btn" type="submit">Submit</button>
                     </div>
                 </form>
                 <div id="toast" class="toast">✅ Thank you! Your booking request has been sent. Please check your email for the confirmation</div>
