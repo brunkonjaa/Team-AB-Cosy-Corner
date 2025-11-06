@@ -1,13 +1,13 @@
 
     const photos = [
-      { src: "https://images.unsplash.com/photo-1560807707-8cc77767d783?w=600&h=800&fit=crop", alt: "Cute Groomed Dog", credit: "Photo by Jamie Street on Unsplash" },
-      { src: "https://images.unsplash.com/photo-1647806422508-0322f33e270b?w=600&h=800&fit=crop", alt: "Cat portrait", credit: "Photo by Shabnam Rahman on Unsplash" },
-      { src: "https://images.unsplash.com/photo-1517849845537-4d257902454a?w=600&h=800&fit=crop", alt: "Smiling Puppy", credit: "Photo by Alvan Nee on Unsplash" },
-      { src: "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=600&h=800&fit=crop", alt: "Cat looking back", credit: "Photo by Nick Karvounis on Unsplash" },
-      { src: "https://images.unsplash.com/photo-1557246565-8a3d3ab5d7f6?w=600&h=800&fit=crop", alt: "Brown tabby cat", credit: "Photo by someone on Unsplash" },
-      { src: "https://images.unsplash.com/photo-1495360010541-f48722b34f7d?w=600&h=800&fit=crop", alt: "Cat sitting indoor", credit: "Photo by Tran Mau Tri Tam on Unsplash" },
-      { src: "https://images.unsplash.com/photo-1600804340584-c7db2eacf0bf?w=600&h=800&fit=crop", alt: "Cute Groomed Dog", credit: "Photo by Jamie Street on Unsplash" },
-      { src: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&h=800&fit=crop", alt: "Running dogs", credit: "Photo by someone on Unsplash" }
+      { src: "../images/gallery/photo_1.jpg", alt: "Cute Groomed Dog", credit: "Happy Paw Gallery" },
+      { src: "../images/gallery/photo_2.jpg", alt: "Cat portrait", credit: "Happy Paw Gallery" },
+      { src: "../images/gallery/photo_3.jpg", alt: "Smiling Puppy", credit: "Happy Paw Gallery" },
+      { src: "../images/gallery/photo_4.jpg", alt: "Cat looking back", credit: "Happy Paw Gallery" },
+      { src: "../images/gallery/photo_5.jpg", alt: "Brown tabby cat", credit: "Happy Paw Gallery" },
+      { src: "../images/gallery/photo_6.jpg", alt: "Cat sitting indoor", credit: "Happy Paw Gallery" },
+      { src: "../images/gallery/photo_7.jpg", alt: "Cute Groomed Dog", credit: "Happy Paw Gallery" },
+      { src: "../images/gallery/photo_8.jpg", alt: "Running dogs", credit: "Happy Paw Gallery" }
     ];
 
     const carousel = document.getElementById('carousel');
@@ -108,11 +108,36 @@
       lastZone = zone;
     }
 
+    let isRotating = false;
+    let currentRotation = 0;
+    let targetRotation = 0;
+    
+    function animateRotation() {
+      const diff = targetRotation - currentRotation;
+      
+      if (Math.abs(diff) > 0.1) {
+        // Smooth interpolation - adjust speed here (0.08 = slower, 0.15 = faster)
+        currentRotation += diff * 0.12;
+        carousel.style.transform = `rotateY(${currentRotation}deg)`;
+        rotation = currentRotation;
+        update();
+        requestAnimationFrame(animateRotation);
+      } else {
+        currentRotation = targetRotation;
+        rotation = currentRotation;
+        carousel.style.transform = `rotateY(${currentRotation}deg)`;
+        update();
+        isRotating = false;
+      }
+    }
+    
     function rotate(dir) {
-      rotation -= dir * step;
-      carousel.style.transform = `rotateY(${rotation}deg)`;
-      update();
+      if (isRotating) return;
+      isRotating = true;
+      
+      targetRotation -= dir * (step / 2);
       checkClick();
+      animateRotation();
     }
 
     prevBtn.onclick = () => { initAudio(); rotate(-1); };
