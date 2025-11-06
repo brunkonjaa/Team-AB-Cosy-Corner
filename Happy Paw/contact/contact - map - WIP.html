@@ -1,0 +1,258 @@
+<!--
+****************************************************************************
+* Project: Happy Paw Dog Grooming Website - Contact Page
+* Author: Team AB - Cosy Corner
+* Date: October 2025
+* Last Updated: October 27, 2025
+* 
+* EXTERNAL RESOURCES USED:
+* 
+* Framework: Bootstrap 5.3.2
+* Author: Bootstrap Team (Twitter, Inc.)
+* Source: https://getbootstrap.com
+* CDN: https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css
+* License: MIT License
+* Usage: Responsive navbar with dropdown menu
+* Documentation: https://getbootstrap.com/docs/5.3/components/navbar/
+* 
+* Icons: Google Material Symbols Rounded
+* Author: Google
+* Source: https://fonts.google.com/icons
+* CDN: https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded
+* License: Apache License 2.0
+* Usage: Navigation icons (home, info, grid_view, collections, event, call)
+* Added: October 27, 2025
+* 
+* Fonts: Google Fonts
+* Source: https://fonts.google.com
+* Fonts Used: Satoshi (via Fontshare API)
+* 
+* JavaScript: jQuery 3.7.1
+* Author: jQuery Foundation
+* Source: https://jquery.com
+* License: MIT License
+* Usage: DOM manipulation for navigation interactions
+* CDN: Google Hosted Libraries
+* 
+* CHANGES LOG (October 27, 2025):
+* - Converted navbar from text links to icon-based navigation
+* - Added Material Symbols Rounded font CDN link
+* - Implemented coral tooltip system on icon hover
+* - Active page (Contact/call icon) highlighted
+* 
+* All page content, layout design, and custom styling are original work.
+****************************************************************************
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Happy Paw</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Google Material Symbols -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/bootstrap-custom.css" />
+  <link rel="stylesheet" href="../css/about-booking.css" />
+</head>
+
+<body>
+  <!-- 
+  *************************************************************************
+  * BOOTSTRAP NAVBAR COMPONENT
+  * Source: Bootstrap 5.3.2 Navbar Documentation
+  * URL: https://getbootstrap.com/docs/5.3/components/navbar/
+  * 
+  * Modified: Added custom .navbar-happy-paw class for pastel gradient styling,
+  *          added Services dropdown with fragment links to service cards,
+  *          changed brand text to "🐾 Happy Paw"
+  * 
+  * Classes used: .navbar, .navbar-expand-lg, .fixed-top, .container-fluid,
+  *              .navbar-brand, .navbar-toggler, .navbar-toggler-icon,
+  *              .navbar-collapse, .navbar-nav, .nav-item, .nav-link,
+  *              .dropdown, .dropdown-toggle, .dropdown-menu, .dropdown-item
+  *************************************************************************
+  -->
+  <!-- Bootstrap Responsive Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-happy-paw fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">🐾 Happy Paw</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto navbar-icons">
+          <li class="nav-item">
+            <a class="nav-link nav-icon" href="../index.html" data-tooltip="Home">
+              <span class="material-symbols-rounded icon">home</span>
+              <span class="nav-text">Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-icon" href="../about/about.html" data-tooltip="About">
+              <span class="material-symbols-rounded icon">info</span>
+              <span class="nav-text">About</span>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link nav-icon dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-tooltip="Services">
+              <span class="material-symbols-rounded icon">grid_view</span>
+              <span class="nav-text">Services</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../services/services-bootstrap.html">All Services</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="../services/services-bootstrap.html#full-groom">Full Groom</a></li>
+              <li><a class="dropdown-item" href="../services/services-bootstrap.html#bath-blowdry">Bath & Blow Dry</a></li>
+              <li><a class="dropdown-item" href="../services/services-bootstrap.html#mini-groom">Mini Groom</a></li>
+              <li><a class="dropdown-item" href="../services/services-bootstrap.html#puppy-first">Puppy's First Groom</a></li>
+              <li><a class="dropdown-item" href="../services/services-bootstrap.html#deshedding">Deshedding Treatment</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <!-- Updated: link now points to gallery2.html (revolver gallery) -->
+            <a class="nav-link nav-icon" href="../gallery/gallery2.html" data-tooltip="Gallery">
+              <span class="material-symbols-rounded icon">collections</span>
+              <span class="nav-text">Gallery</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-icon" href="../booking/booking.html" data-tooltip="Booking">
+              <span class="material-symbols-rounded icon">event</span>
+              <span class="nav-text">Booking</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-icon active" aria-current="page" href="../contact/contact.html" data-tooltip="Contact">
+              <span class="material-symbols-rounded icon">call</span>
+              <span class="nav-text">Contact</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="contact-page main-section-col text-start">
+    <section class="contact-form booking-form">
+      <h2 class="center-text">We'd love to hear from you</h2>
+      <p class="center-text mb-5">
+        Whether you have grooming queries, need help planning your dog's first visit,
+        or want to collaborate on a community event, our team is happy to help.
+      </p>
+
+      <!-- FORM START -->
+      <form id="contactForm" onsubmit="showToast(event)">
+        <!-- full name -->
+        <div class="form-row">
+          <div class="label-input-col">
+            <label for="firstname">Full Name</label>
+            <input class="input-box" type="text" placeholder="Your name" required />
+          </div>
+        </div>
+
+        <!-- email -->
+        <div class="form-row">
+          <div class="label-input-col">
+            <label for="email">Email</label>
+            <input class="input-box" type="text" placeholder="you@example.com" required />
+          </div>
+        </div>
+
+        <!-- help list -->
+        <div class="form-row">
+          <div class="label-input-col">
+            <label for="help-list">How can we help?</label>
+            <select class="input-box" required>
+              <option value="">Select a topic</option>
+              <option>Grooming enquiry</option>
+              <option>Booking question</option>
+              <option>General feedback</option>
+            </select>
+          </div>
+        </div>
+        
+        <!-- additional comments -->
+        <div class="form-row">
+          <div class="label-input-col">
+              <label for="message">Message</label>
+              <textarea maxlength="250" rows="8" class="input-box" placeholder="Please type your message here..."></textarea>
+          </div>
+        </div>
+
+         <!-- consent checkbox -->
+        <div class="consent-flex">                  
+          <label class="consent"> <span class="fw-bold">I consent to Happy Paw's Terms &amp; Conditions.<input type="checkbox" class="checkbox" required/></span></label>
+          <button class="submit-btn">Submit</button>
+        </div>
+      </form>
+      <!-- FORM END -->
+
+      <!-- Notification pop-up -->
+      <div id="toast" class="toast">✅ Thank you! Your message has been sent.</div>
+      <script src="../js/contact.js"></script>
+      
+    </section>
+
+    <aside class="contact-info">
+      <h3>Visit Happy Paw</h3>
+      <!-- INTERACTIVE MAP -->
+      <div class="map-container">
+        <div class="map-overlay">🐾 Happy Paw Location</div>
+        <!-- 
+          REPLACE THIS WITH YOUR ACTUAL ADDRESS:
+          1. Go to Google Maps (https://www.google.com/maps)
+          2. Search for your address
+          3. Click "Share" button
+          4. Click "Embed a map" tab
+          5. Copy the iframe code
+          6. Replace the src URL below
+          
+          For now, this shows Dublin city center as an example
+        -->
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.6278789890817!2d-6.260309684271576!3d53.34958997998426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e80ea27ac2f%3A0xa00c7a9973171a0!2sCommercial%20St%2C%20Dublin%2C%20Ireland!5e0!3m2!1sen!2sie!4v1699000000000!5m2!1sen!2sie" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <!-- LINK TO OPEN IN GOOGLE MAPS -->
+      <div class="consent-flex"><a href="https://goo.gl/maps/YourLocationLinkHere" target="_blank" class="map-link">
+         <label class="consent"><span class="material-symbols-rounded">directions</span>
+        Get Directions in Google Maps</label>
+      </a>
+      </div>
+
+      <h4>Salon Hours</h4>
+      <ul class="hours">
+        <li><span>Tuesday - Friday</span><span>09:00 - 18:30</span></li>
+        <li><span>Saturday</span><span>09:00 - 17:00</span></li>
+        <li><span>Sunday & Monday</span><span>Closed</span></li>
+      </ul>
+
+      <p><strong>Phone:</strong> +353 (0)12 345 6789</p>
+      <p><strong>Email:</strong> hello@something.ie</p>
+
+      <button class="secondary-btn" onclick="window.location.href='../booking/booking.html';">Book A Visit</button>
+    </aside>
+  </main>
+
+  <footer id="smartFooter">
+    <p class="text-center">&copy; 2025 Happy Paw | All rights reserved.</p>
+  </footer>
+  
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="../js/services.js"></script>
+</body>
+</html>
