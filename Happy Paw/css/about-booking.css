@@ -299,8 +299,8 @@ header {
     background: #fff;
     padding: 2rem;
     gap: 2rem;                                  /* gap between children */
-    border-radius: 12px;                        /* rounded corners */
-    box-shadow: 0 0 12px var(--shadow);         /* subtle shadow */
+    border-radius: 10px;                        /* rounded corners */
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);         /* subtle shadow */
 }
 
 /* flex direction column */
