@@ -141,8 +141,33 @@
     </div>
   </nav>
 
-  <main class="contact-page main-section-col text-start">
-    <section class="contact-form booking-form">
+  <main class="contact-page-layout">
+    <!-- LEFT SIDE: Visit Happy Paw - Split into two cards -->
+    <div class="contact-left-column">
+      <!-- Top Card: Map -->
+      <aside class="contact-info-map">
+        <h3>Visit Happy Paw</h3>
+        <div class="map-placeholder">Map preview coming soon</div>
+      </aside>
+
+      <!-- Bottom Card: Info -->
+      <aside class="contact-info-details">
+        <h4>Salon Hours</h4>
+        <ul class="hours">
+          <li><span>Tuesday - Friday</span><span>09:00 - 18:30</span></li>
+          <li><span>Saturday</span><span>09:00 - 17:00</span></li>
+          <li><span>Sunday & Monday</span><span>Closed</span></li>
+        </ul>
+
+        <p><strong>Phone:</strong> +353 (0)12 345 6789</p>
+        <p><strong>Email:</strong> hello@something.ie</p>
+
+        <button class="secondary-btn" onclick="window.location.href='../booking/booking.html';">Book A Visit</button>
+      </aside>
+    </div>
+
+    <!-- RIGHT SIDE: Contact Form -->
+    <section class="contact-form-right">
       <h2 class="center-text">We'd love to hear from you</h2>
       <p class="center-text mb-5">
         Whether you have grooming queries, need help planning your dog's first visit,
@@ -184,7 +209,7 @@
         <div class="form-row">
           <div class="label-input-col">
               <label for="message">Message</label>
-              <textarea maxlength="250" rows="8" class="input-box" placeholder="Please type your message here..."></textarea>
+              <textarea maxlength="250" rows="2" class="input-box" placeholder="Please type your message here..."></textarea>
           </div>
         </div>
 
@@ -201,23 +226,6 @@
       <script src="../js/contact.js"></script>
       
     </section>
-
-    <aside class="contact-info">
-      <h3>Visit Happy Paw</h3>
-      <div class="map-placeholder">Map preview coming soon</div>
-
-      <h4>Salon Hours</h4>
-      <ul class="hours">
-        <li><span>Tuesday - Friday</span><span>09:00 - 18:30</span></li>
-        <li><span>Saturday</span><span>09:00 - 17:00</span></li>
-        <li><span>Sunday & Monday</span><span>Closed</span></li>
-      </ul>
-
-      <p><strong>Phone:</strong> +353 (0)12 345 6789</p>
-      <p><strong>Email:</strong> hello@something.ie</p>
-
-      <button class="secondary-btn" onclick="window.location.href='../booking/booking.html';">Book A Visit</button>
-    </aside>
   </main>
 
   <footer id="smartFooter">
