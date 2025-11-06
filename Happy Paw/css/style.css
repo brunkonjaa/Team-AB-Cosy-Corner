@@ -359,3 +359,63 @@ footer.show {
     opacity: 1;
     bottom: 60px;
   }
+/* End of Toast styling */
+
+/* Map container styling on Contact page - Alex v1.0 */
+    .map-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      border: 3px solid #ffd4d4;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, #ffd4d4 0%, #ffe5cc 100%);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      filter: saturate(0.8) brightness(1.05);
+    }
+
+    .map-overlay {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 8px 15px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      color: #d4856a;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      color: #d4856a;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 8px 15px;
+      border-radius: 8px;
+      background: rgba(255, 212, 212, 0.2);
+    }
+
+    .map-link:hover {
+      background: rgba(255, 212, 212, 0.4);
+      color: #c47a5e;
+      transform: translateX(5px);
+    }
+
+    .map-link .material-symbols-rounded {
+      font-size: 20px;
+    }
