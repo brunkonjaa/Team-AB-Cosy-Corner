@@ -1,3 +1,15 @@
+/*
+ * NOTICE: This file has been consolidated into consolidated.css
+ * 
+ * This file is no longer actively used by most HTML pages.
+ * All content from this file has been merged into: consolidated.css
+ * 
+ * Please use consolidated.css instead for all pages except:
+ * - about_parallax.html (still uses individual CSS files)
+ * 
+ * Date consolidated: November 7, 2025
+ */
+
 /* declare colour vars */
 :root {
     /* debug colours */

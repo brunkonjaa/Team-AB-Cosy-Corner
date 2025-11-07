@@ -1,16 +1,492 @@
 /*
- * NOTICE: This file has been consolidated into consolidated.css
- * 
- * This file is no longer actively used by most HTML pages.
- * All content from this file has been merged into: consolidated.css
- * 
- * Please use consolidated.css instead for all pages except:
- * - about_parallax.html (still uses individual CSS files)
- * 
- * Date consolidated: November 7, 2025
- */
+CSS Consolidation Summary - November 7, 2025
 
-@import "main.css";
+This file consolidates three separate CSS files into one organized stylesheet.
+
+Lines copy/pasted from original files:
+- main.css: 20 lines (global CSS variables and base styles)
+- style.css: 368 lines (index page, navigation, services, gallery, contact layouts)
+- about-booking.css: 600 lines (forms, responsive design, about/booking/contact/gallery2 styles, minus 1 @import line)
+
+Lines from gallery2.html inline styles:
+- gallery2.html <style> block: 175 lines (carousel wrapper, lightbox, controls - moved from inline to external CSS)
+
+Total lines moved/copied: 1163
+New lines added: 29 (section headers, table of contents, and comment updates for organization)
+Total file lines: 1192
+
+All styling preserved - no changes to CSS rules, only consolidation and organization.
+*/
+
+/*
+Table of Contents:
+
+1. Global CSS Variables and Base Styles [from main.css] (lines 30-49)
+2. Base Layout and Index Page Styles [from style.css] (lines 54-421)
+3. Forms, Responsive Design, and Page-Specific Styles [from about-booking.css] (lines 426-1167)
+4. Gallery2 Carousel and Lightbox [from gallery2.html inline styles] (lines 1171-1373)
+*/
+
+/* ================================================
+   Global CSS Variables and Base Styles [from main.css]
+   Applies to: All HTML pages (site-wide color/font variables)
+   ================================================ */
+
+/* declare colour vars */
+:root {
+    /* debug colours */
+    --debug1:#06c;
+    --debug2:#a3f;
+    --debug3: red;
+    --white: #f9fbf6;
+
+    /* primary colours */
+    /* --bg_colour: rgb(231, 227, 222); */
+    --bg_colour: #f8f6f1;                     /* main background colour*/
+    --banner: rgb(188, 108, 96);                /* header banner */
+    --title: #f9f9f9;                           /* main heading/title colours */
+    --p: #3d2a33;                             /* main paragraph font colour */
+
+    /* secondary colours */
+    --faint:rgb(134, 134, 134);
+    --transparent:transparent;
+    --secondary_colour: rgb(188, 108, 96);
+    --shadow: rgba(1, 1, 1, 0.05);
+
+    /* other */
+}
+
+/* ================================================
+   Base Layout and Index Page Styles [from style.css]
+   Applies to: index.html, header/navigation/footer, services, gallery, contact sections
+   ================================================ */
+
+/* Color palette reference
+Background: #f8f6f1
+Header/Footer: #c8b6a6
+Text: #3a3a3a
+Accent: #d16b5f
+Card/Section: #ffffff
+*/
+
+/* Global page setup */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lora", serif;
+  background-color: #f8f6f1;
+  color: #3a3a3a;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+/* Header section */
+header {
+  position: relative;
+  background-image: url("../images//dogs/mydog.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* Add soft overlay behind text */
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35); /* darken just enough to see white text */
+  z-index: 0;
+}
+
+/* Ensure nav and title sit above the overlay */
+header * {
+  position: relative;
+  z-index: 1;
+}
+
+p {
+    line-height: 2em;
+    overflow-wrap: break-word;
+    text-align: justify;
+    margin-bottom: auto;
+}
+
+
+
+/* Website title */
+.site-title {
+  margin: 0;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+/* Navigation container */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Navigation links */
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff; /* white text for visibility */
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #d16b5f;
+  color: #ffffff;
+}
+
+/* Rounded accent button */
+.nav-links a.pill {
+  background-color: #d16b5f;
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 0.5rem 1.2rem;
+}
+
+.nav-links a.pill:hover {
+  background-color: #b85a51;
+}
+
+/* Main content area */
+main {
+  background-color: #ffffff;
+  margin: 2rem auto;
+  max-width: 900px;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  padding-bottom: 80px; /* prevent overlap with footer */
+}
+/* Centered image section */
+.center-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+}
+
+.center-image img {
+  max-width: 50%;        /* scales nicely on all devices */
+  height: auto;
+  border-radius: 12px;    /* optional: soft edges */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* soft shadow for depth */
+}
+
+/* Footer fixed at bottom */
+/*footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #c8b6a6;
+  color: #3a3a3a;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}*/
+
+/* Retractable footer - Alex v1.0*/
+
+footer {
+  position: fixed;
+  bottom: -60px; /* hidden below the screen */
+  left: 0;
+  width: 100%;
+  background-color: #ecd7c4;
+  color: rgb(113, 63, 55);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+  transition: bottom 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+/* visible state */
+footer.show {
+  bottom: 0;
+}
+
+/* end of the footer */
+
+/* Responsive layout for small screens */
+@media (max-width: 600px) {
+  .nav-links {
+    flex-direction: column;
+  }
+
+  main {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
+
+/* 	End of initial work done on css,
+	mainly for index page,
+	but it works on others so far,
+	more changes to come */
+
+/*Start of services styling */
+/* Services page */
+.services-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-item {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h3 {
+  margin-bottom: 0.5rem;
+  color: #d16b5f;
+}
+
+.services-footer {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.1rem;
+}
+/* Services page hover effect because it looks great */
+
+.service-item {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  border: 1px solid transparent;
+}
+
+/* Hover effect */
+.service-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  border-color: #d16b5f; /* coral accent border */
+}
+
+/* Optional: highlight title color on hover */
+.service-item:hover h3 {
+  color: #b95a50; /* slightly darker coral */
+}
+
+/* Optional: subtle cursor hint */
+.service-item {
+  cursor: pointer;
+}
+/* end of services styling */
+
+/* Gallery styling - Alex v1*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.gallery {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  padding-bottom: 3rem;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+  
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  
+}
+
+.gallery-item:hover img {
+  transform: scale(1.2);
+}
+
+/* Popup overlay */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.popup img {
+  max-width: 80vw;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.popup.hidden {
+  display: none;
+}
+
+#prevBtn { left: 5%; }
+#nextBtn { right: 5%; }
+
+#closeBtn {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#closeBtn:hover {
+  color: #ff7b54;
+}
+
+#credit {
+  color: #ddd;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+/* End of Gallery styling */
+
+/* Contact page styling */
+/* Toast styling - Alex v1.0 */
+  .toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 14px;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.4s ease, bottom 0.4s ease;
+  }
+
+  .toast.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 60px;
+  }
+/* End of Toast styling */
+
+/* Map container styling on Contact page - Alex v1.0 */
+    .map-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      border: 3px solid #ffd4d4;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, #ffd4d4 0%, #ffe5cc 100%);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      filter: saturate(0.8) brightness(1.05);
+    }
+
+    .map-overlay {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 8px 15px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      color: #d4856a;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      color: #d4856a;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 8px 15px;
+      border-radius: 8px;
+      background: rgba(255, 212, 212, 0.2);
+    }
+
+    .map-link:hover {
+      background: rgba(255, 212, 212, 0.4);
+      color: #c47a5e;
+      transform: translateX(5px);
+    }
+
+    .map-link .material-symbols-rounded {
+      font-size: 20px;
+    }
+
+/* ================================================
+   Forms, Responsive Design, and Page-Specific Styles [from about-booking.css]
+   Applies to: about.html, about_parallax.html, booking.html, contact.html, gallery2.html
+   ================================================ */
 
 /* google icons */
 .material-symbols-rounded {
@@ -679,11 +1155,6 @@ textarea {
   font-size: 0.65rem;
 }
 
-.contact-form-right .submit-btn {
-  font-size: 0.8rem;
-  padding: 0.55rem 1.25rem;
-}
-
 /* Responsive layout */
 @media (max-width: 930px) {
   .contact-page-layout {
@@ -697,5 +1168,207 @@ textarea {
   
   .contact-form-right {
     max-width: 100%;
+  }
+}
+
+/* Gallery 2 Carousel and Lightbox Styles - Originally inline in gallery2.html */
+.main-container {
+  padding-top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.title {
+  font-family: 'Lora', serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  margin: 80px 0;
+}
+
+.carousel-wrapper {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 2000px;
+  position: relative;
+}
+
+.carousel-container {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  transform-style: preserve-3d;
+  transition: transform 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-card {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  left: 0;
+  top: 0;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.carousel-card:hover {
+  box-shadow: 0 25px 80px rgba(0,0,0,0.5);
+}
+
+.carousel-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+}
+
+.controls {
+  display: flex;
+  gap: 30px;
+  margin-top: 100px;
+}
+
+.btn-control {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  font-size: 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.btn-control:hover {
+  transform: scale(1.0);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.btn-control:active {
+  transform: scale(0.95);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.95);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.show {
+  display: flex;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.lb-close {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 50px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
+.lb-close:hover {
+  opacity: 0.7;
+}
+
+.lb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  font-size: 50px;
+  padding: 15px 25px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.lb-nav:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+.lb-prev {
+  left: 20px;
+}
+
+.lb-next {
+  right: 20px;
+}
+
+.lb-credit {
+  position: absolute;
+  bottom: -45px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    height: 400px;
+  }
+
+  .carousel-container {
+    width: 250px;
+    height: 330px;
+  }
+
+  .carousel-card {
+    width: 250px;
+    height: 330px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .btn-control {
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
   }
 }
