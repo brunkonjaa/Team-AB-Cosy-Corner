@@ -1022,6 +1022,7 @@ textarea {
 .contact-info-map h3 {
   color: var(--secondary_colour);
   margin-bottom: 0.5rem;
+  padding: 1rem 1rem 1rem 1rem;
   font-size: 1rem;
 }
 
