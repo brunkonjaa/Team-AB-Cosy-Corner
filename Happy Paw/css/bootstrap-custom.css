@@ -84,7 +84,7 @@
    ================================================ */
 
 .navbar-happy-paw {
-  background: linear-gradient(135deg, #C85A4B 0%, #ffe5cc 50%, #C85A4B 100%); /* Updated Nov 6, 2025 - Coral/salmon + Coral/salmon gradient color */ 
+  background: linear-gradient(135deg, #C85A4B 0%, #ecbcb3 25%, #C85A4B 100%); /* Updated Nov 6, 2025 - Coral/salmon + Coral/salmon gradient color */ 
   /* background: #C85A4B !important;  /* Updated Oct 27, 2025 - Coral/salmon solid color */ 
   box-shadow: 0 4px 12px rgba(200, 90, 75, 0.25);  /* Updated shadow to match coral */
   padding: 1rem 1.5rem;
