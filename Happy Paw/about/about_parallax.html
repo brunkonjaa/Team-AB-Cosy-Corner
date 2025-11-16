@@ -132,6 +132,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link nav-icon" href="trust-hub.html" data-tooltip="Trust Hub">
+                            <span class="material-symbols-rounded icon">workspace_premium</span>
+                            <span class="nav-text">Trust Hub</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link nav-icon" href="../booking/booking.html" data-tooltip="Booking">
                             <span class="material-symbols-rounded icon">event</span>
                             <span class="nav-text">Booking</span>
@@ -150,7 +156,7 @@
 
    <!-- PARALLAX LAYERS -->
     <!-- Layer 1: Background shapes (slowest) -->
-    <div class="parallax-layer layer-bg" id="layerBg">
+    <div class="parallax-layer layer-bg hp-section-tight" id="layerBg">
         <div class="bg-shape shape-1"></div>
         <div class="bg-shape shape-2"></div>
         <div class="bg-shape shape-3"></div>
@@ -158,7 +164,7 @@
     </div>
 
     <!-- Layer 2: Dog images (medium speed) -->
-    <div class="parallax-layer layer-middle" id="layerMiddle">
+    <div class="parallax-layer layer-middle hp-section-tight" id="layerMiddle">
         <div class="parallax-dog-img dog-img-1">
             <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80" alt="Cute Yorkshire Terrier">
         </div>
@@ -184,11 +190,11 @@
     </div>
 
     <!-- FOREGROUND CONTENT -->
-    <div class="parallax-container">
-        <div class="parallax-content">
+    <div class="parallax-container hp-section hp-container">
+        <div class="parallax-content hp-stack-lg">
             
             <!-- FIRST CARD - ABOUT -->
-            <div class="content-window">
+            <div class="content-window hp-stack-md">
                 <div class="card-window">
                     <h2>About Happy Paw</h2>
                     <p>Welcome to Happy Paws! Here at our prestigious salon we offer the best services to pamper your pooch. We offer stress-free dog grooming for each unique pooch — from a simple wash &amp; trim to a full dental and ear cleaning!</p>
@@ -205,7 +211,7 @@
             </div>
 
             <!-- SECOND CARD - OUR STORY -->
-            <div class="content-window">
+            <div class="content-window hp-stack-md">
                 <div class="card-window">
                     <h3>Our Story</h3>
                     <p>Founded in 2020, Happy Paw has grown from a small neighborhood grooming shop to one of Dublin's most trusted dog care centers. We believe every dog deserves to look and feel their best!</p>
@@ -214,7 +220,7 @@
             </div>
 
             <!-- THIRD CARD - CONTACT -->
-            <div class="content-window">
+            <div class="content-window hp-stack-md">
                 <div class="card-window">
                     <h3>Get in Touch</h3>
                     <ul>
@@ -243,11 +249,12 @@
             <p class="text-center">&copy; 2025 Happy Paw | All rights reserved.</p>
         </footer>
         <!-- FOOTER ENDS -->
-     <!-- footer script -->
+    <!-- footer script -->
     <script src="../js/services.js"></script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/nav-transitions.js"></script>
     
     <!-- Parallax Script -->
    <script>

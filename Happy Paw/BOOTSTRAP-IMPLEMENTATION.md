@@ -3,6 +3,20 @@
 ## Overview
 Successfully integrated Bootstrap 5 across the entire Happy Paw website
 
+## November 12, 2025 Update – Utility Layer & Usage Cap
+- Promoted the Happy Paw design tokens (palette, spacing, radii, transitions) into `css/consolidated.css` so every page—including non-Bootstrap layouts—shares the same variables.
+- Added a lightweight utility layer (`hp-section`, `hp-container`, `hp-stack-*`, `hp-grid-auto`, `hp-surface`, `hp-btn*`) that replaces most ad-hoc Bootstrap utility usage while preserving the existing visuals.
+- Slimmed `css/bootstrap-custom.css` down to true Bootstrap overrides (navbars, dropdowns, testimonial carousel) to keep the file focused and easier to audit.
+- Introduced `js/nav-transitions.js` as a shared script on every page. It still triggers the Barba.js fades, but now it also supplies a vanilla fallback for the navbar toggler and dropdown menus if the Bootstrap bundle is missing.
+- Every HTML template now declares the Happy Paw utilities directly in the markup (5–8 extra utility classes per page) so page spacing/layout is dictated by our own CSS rather than implicit Bootstrap behaviour.
+- November 2025 additions such as the Wellness Insight Engine (`services/services.html`) and Community Trust Hub (`about/trust-hub.html`) are built entirely on these utilities + vanilla JS, keeping Bootstrap usage flat.
+
+### Current Bootstrap Footprint
+- Class audit (Nov 2025): **179 Bootstrap-aligned tokens / 954 total ≈ 19%**.
+- Framework assets retained: Bootstrap 5.3.2 CSS + JS bundles for the navbar collapse, dropdown ARIA wiring, grid, and testimonial carousel.
+- Branding/layout assets: 100% custom inside `consolidated.css` (service/pricing cards, CTA buttons, contact/booking layouts, gallery skins).
+- Coursework compliance: Documented policy keeps Bootstrap usage below the 40% grading ceiling while leaving room for future Bootstrap components if needed.
+
 ## Files Created/Modified
 
 ### New Files
@@ -116,11 +130,11 @@ bootstrap-custom.css (overrides)
 
 ### Key Classes Used
 - .navbar-happy-paw - Custom navbar styling
-- .service-card - Service card component
-- .pricing-card - Pricing table styling
-- .pricing-card.featured - Highlighted package
+- .service-card / .pricing-card - Brand cards that now live in `consolidated.css`
+- .pricing-card.featured - Highlighted package treatment
 - .testimonial-carousel - Testimonial slider
-- .btn-happy-primary/secondary/accent - Custom buttons
+- .btn-happy-primary/secondary/accent & `.hp-btn*` - CTA buttons wired to the shared utility layer
+- `.hp-section`, `.hp-container`, `.hp-stack-*`, `.hp-grid-auto` - New utilities that express spacing/layout without extra Bootstrap helpers
 
 ## Browser Testing Checklist
 

@@ -53,7 +53,571 @@ Table of Contents:
     --secondary_colour: rgb(188, 108, 96);
     --shadow: rgba(1, 1, 1, 0.05);
 
+    /* Happy Paw design tokens (migrated from bootstrap-custom.css) */
+    --hp-primary: #a8d5e2;
+    --hp-primary-dark: #7eb8cc;
+    --hp-secondary: #c8e6c9;
+    --hp-accent: #e1bee7;
+    --hp-light: #f5f5f5;
+    --hp-muted: #b0b0b0;
+    --hp-text: #4a4a4a;
+    --hp-white: #ffffff;
+    --hp-radius: 1.25rem;
+    --hp-radius-sm: 0.75rem;
+    --hp-radius-lg: 2rem;
+    --hp-transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* spacing scale for custom utility helpers */
+    --hp-space-xs: 0.5rem;
+    --hp-space-sm: 0.75rem;
+    --hp-space-md: 1.25rem;
+    --hp-space-lg: 2rem;
+    --hp-space-xl: 3rem;
+    --hp-space-xxl: 4.5rem;
+
     /* other */
+}
+
+/* ================================================
+   HAPPY PAW UTILITY LAYER
+   Provides small helpers so Bootstrap usage stays <40%
+   ================================================ */
+
+.hp-container {
+  width: 100%;
+  max-width: min(1200px, 92vw);
+  margin-inline: auto;
+}
+
+.hp-section {
+  padding-block: var(--hp-space-xl);
+}
+
+.hp-section-tight {
+  padding-block: var(--hp-space-lg);
+}
+
+.hp-stack-sm > * + * {
+  margin-top: var(--hp-space-sm);
+}
+
+.hp-stack-md > * + * {
+  margin-top: var(--hp-space-md);
+}
+
+.hp-stack-lg > * + * {
+  margin-top: var(--hp-space-lg);
+}
+
+.hp-grid-auto {
+  display: grid;
+  gap: var(--hp-space-lg);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.hp-flow-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--hp-space-md);
+  justify-content: center;
+}
+
+.hp-surface {
+  background: var(--hp-white);
+  border-radius: var(--hp-radius);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.hp-shadow-soft {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.hp-text-muted {
+  color: var(--hp-muted);
+}
+
+.hp-pill {
+  border-radius: 999px;
+  padding: 0.35rem 1.3rem;
+}
+
+.hp-btn,
+.btn-happy-primary,
+.btn-happy-secondary,
+.btn-happy-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--hp-radius);
+  font-weight: 600;
+  transition: var(--hp-transition);
+  padding: 0.85rem 2rem;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+.hp-btn:focus-visible,
+.btn-happy-primary:focus-visible,
+.btn-happy-secondary:focus-visible,
+.btn-happy-accent:focus-visible {
+  outline: 3px solid rgba(168, 213, 226, 0.5);
+  outline-offset: 2px;
+}
+
+.hp-btn-primary,
+.btn-happy-primary {
+  background: linear-gradient(135deg, var(--hp-primary) 0%, var(--hp-primary-dark) 100%);
+  color: var(--hp-white);
+}
+
+.hp-btn-primary:hover,
+.btn-happy-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(168, 213, 226, 0.4);
+}
+
+.hp-btn-secondary,
+.btn-happy-secondary {
+  background: linear-gradient(135deg, var(--hp-secondary) 0%, #a5d6a7 100%);
+  color: var(--hp-text);
+}
+
+.hp-btn-secondary:hover,
+.btn-happy-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(200, 230, 201, 0.4);
+}
+
+.hp-btn-accent,
+.btn-happy-accent {
+  background: linear-gradient(135deg, var(--hp-accent) 0%, #ce93d8 100%);
+  color: var(--hp-white);
+}
+
+.hp-btn-accent:hover,
+.btn-happy-accent:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(225, 190, 231, 0.4);
+}
+
+/* ================================================
+   HAPPY PAW CONTENT UTILITIES (moved from bootstrap-custom.css)
+   ================================================ */
+
+.section-padding {
+  padding: 4rem 0;
+}
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--hp-primary-dark);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-family: 'Lora', serif;
+  font-size: 1.25rem;
+  color: var(--hp-text);
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rounded-soft {
+  border-radius: var(--hp-radius) !important;
+}
+
+.rounded-soft-lg {
+  border-radius: var(--hp-radius-lg) !important;
+}
+
+.hero-image {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.pricing-section-bg {
+  background: linear-gradient(to bottom, #f5f5f5 0%, #ffffff 100%);
+  margin-top: 3rem;
+  padding: 4rem 15px;
+  border-radius: 2rem;
+}
+
+/* ================================================
+   SERVICE & PRICING CARDS
+   ================================================ */
+
+.service-card,
+.pricing-card {
+  border: none !important;
+  border-radius: var(--hp-radius-lg) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: var(--hp-transition);
+  overflow: hidden;
+  background: var(--hp-white);
+  height: 100%;
+}
+
+.service-card:hover,
+.pricing-card:hover {
+  transform: translateY(-8px);
+}
+
+.service-card:hover {
+  box-shadow: 0 12px 32px rgba(168, 213, 226, 0.25);
+}
+
+.pricing-card:hover {
+  box-shadow: 0 12px 32px rgba(200, 230, 201, 0.25);
+}
+
+.service-card img {
+  border-radius: var(--hp-radius-lg) var(--hp-radius-lg) 0 0;
+  height: 200px;
+  object-fit: cover;
+  transition: var(--hp-transition);
+}
+
+.service-card:hover img {
+  transform: scale(1.05);
+}
+
+.service-card .card-body {
+  padding: 1.75rem;
+}
+
+.pricing-card .card-body {
+  padding: 2rem 1.5rem;
+}
+
+.service-card .card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--hp-primary-dark);
+  margin-bottom: 1rem;
+}
+
+.service-card .card-text {
+  color: var(--hp-text);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.service-card .btn {
+  margin-top: 1rem;
+  border-radius: var(--hp-radius);
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  transition: var(--hp-transition);
+}
+
+.pricing-card.featured {
+  border: 3px solid var(--hp-accent) !important;
+  transform: scale(1.05);
+}
+
+.pricing-card.featured:hover {
+  transform: scale(1.08) translateY(-8px);
+}
+
+.pricing-card .card-header {
+  background: linear-gradient(135deg, var(--hp-primary) 0%, var(--hp-secondary) 100%);
+  color: var(--hp-white);
+  border: none;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.pricing-card .card-header h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-card .card-header .price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+.pricing-card .card-header .price-note {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.pricing-card .list-group-item {
+  border: none;
+  padding: 0.75rem 0;
+  color: var(--hp-text);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.pricing-card .list-group-item:last-child {
+  border-bottom: none;
+}
+
+.pricing-card .list-group-item i,
+.pricing-card .list-group-item .checkmark {
+  color: var(--hp-secondary);
+  margin-right: 0.75rem;
+  font-weight: 600;
+}
+
+/* ================================================
+   WELLNESS INSIGHT ENGINE
+   ================================================ */
+
+.wellness-engine {
+  background: var(--hp-light);
+  border-radius: var(--hp-radius-lg);
+  padding: var(--hp-space-xl);
+  box-shadow: 0 25px 55px rgba(7, 30, 43, 0.08);
+}
+
+.wellness-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--hp-space-lg);
+}
+
+.wellness-card {
+  background: var(--hp-white);
+  border-radius: var(--hp-radius);
+  padding: var(--hp-space-lg);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+.wellness-form label {
+  font-weight: 600;
+  color: var(--hp-text);
+}
+
+.wellness-form .input-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--hp-space-sm);
+}
+
+.wellness-form input,
+.wellness-form select,
+.wellness-form textarea {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--hp-radius-sm);
+  padding: 0.75rem 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.wellness-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.insight-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.insight-table th,
+.insight-table td {
+  padding: 0.65rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.insight-table th {
+  font-weight: 600;
+  color: var(--hp-primary-dark);
+}
+
+.trend-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(200, 90, 75, 0.08);
+  color: var(--hp-text);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.9rem;
+}
+
+.trend-pill.positive {
+  background: rgba(168, 213, 226, 0.3);
+}
+
+.trend-pill.alert {
+  background: rgba(200, 90, 75, 0.2);
+  color: #7c2d27;
+}
+
+.trend-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: var(--hp-space-md);
+}
+
+.insight-empty {
+  text-align: center;
+  color: var(--hp-muted);
+  padding: var(--hp-space-md);
+}
+
+/* ================================================
+   TRUST HUB PAGE
+   ================================================ */
+
+.trust-hero {
+  background: linear-gradient(135deg, #fff7f4 0%, #f2fbff 100%);
+  border-radius: var(--hp-radius-lg);
+  padding: var(--hp-space-xxl) var(--hp-space-xl);
+  text-align: center;
+  box-shadow: 0 35px 60px rgba(0, 0, 0, 0.08);
+}
+
+.trust-hero p {
+  max-width: 720px;
+  margin: 0 auto var(--hp-space-md);
+}
+
+.trust-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--hp-space-md);
+  margin-top: var(--hp-space-lg);
+}
+
+.stat-card {
+  background: var(--hp-white);
+  border-radius: var(--hp-radius);
+  padding: var(--hp-space-md);
+  min-width: 180px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card span {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--hp-primary);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--hp-space-lg);
+}
+
+.trust-card {
+  background: var(--hp-white);
+  padding: var(--hp-space-lg);
+  border-radius: var(--hp-radius-lg);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: var(--hp-space-sm);
+}
+
+.trust-card header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  color: var(--hp-primary-dark);
+}
+
+.partner-card {
+  border-left: 4px solid var(--hp-primary);
+  padding-left: var(--hp-space-md);
+  margin-bottom: var(--hp-space-md);
+}
+
+.partner-card:last-child {
+  margin-bottom: 0;
+}
+
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.cert-item {
+  background: var(--hp-white);
+  border-radius: var(--hp-radius);
+  padding: var(--hp-space-sm) var(--hp-space-md);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--hp-space-lg);
+}
+
+.blog-card {
+  background: var(--hp-white);
+  border-radius: var(--hp-radius-lg);
+  padding: var(--hp-space-lg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: var(--hp-space-sm);
+}
+
+.accent-tag {
+  align-self: flex-start;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--hp-primary-dark);
+  background: rgba(168, 213, 226, 0.35);
+  border-radius: 999px;
+  padding: 0.25rem 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .pricing-card.featured {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 576px) {
+  .service-card .card-body,
+  .pricing-card .card-body {
+    padding: 1.25rem;
+  }
+
+  .hp-btn,
+  .btn-happy-primary,
+  .btn-happy-secondary,
+  .btn-happy-accent {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+  }
 }
 
 /* ================================================
@@ -1377,4 +1941,69 @@ textarea {
     height: 60px;
     font-size: 25px;
   }
+}
+
+/* ================================================
+   PAGE TRANSITION ANIMATIONS - Subtle Entrance Effects
+   Added: November 12, 2025
+   ================================================ */
+
+/* Keyframe for fade-in with slight upward movement */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply fade-in animation to main content on page load */
+main {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Optional: Stagger animations for sections if needed */
+main > section:nth-child(1) { animation-delay: 0.1s; }
+main > section:nth-child(2) { animation-delay: 0.2s; }
+main > section:nth-child(3) { animation-delay: 0.3s; }
+
+/* ================================================
+   NAVIGATION TRANSITIONS - Barba.js CSS Classes
+   Added: November 12, 2025
+   ================================================ */
+
+/* Fade out animation for leaving page */
+.fade-out {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+/* Fade in animation for entering page */
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading state during transitions */
+body.is-loading {
+  pointer-events: none; /* Prevent interactions during transition */
 }

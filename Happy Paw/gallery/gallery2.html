@@ -21,7 +21,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   
 </head>
-<body>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-happy-paw fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">🐾 Happy Paw</a>
@@ -65,6 +65,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link nav-icon" href="../about/trust-hub.html" data-tooltip="Trust Hub">
+                            <span class="material-symbols-rounded icon">workspace_premium</span>
+                            <span class="nav-text">Trust Hub</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link nav-icon" href="../booking/booking.html" data-tooltip="Booking">
                             <span class="material-symbols-rounded icon">event</span>
                             <span class="nav-text">Booking</span>
@@ -81,23 +87,23 @@
         </div>
     </nav>
 
-  <div class="main-container">
+  <div class="main-container hp-section hp-container hp-stack-lg">
     <h1 class="title">Our Furry Friends</h1>
     
-    <div class="carousel-wrapper">
+    <div class="carousel-wrapper hp-section-tight">
       <div class="carousel-container" id="carousel"></div>
     </div>
 
-    <div class="controls">
+    <div class="controls hp-flow-row">
       <button class="btn-control" id="prev">‹</button>
       <button class="btn-control" id="next">›</button>
     </div>
   </div>
 
-  <div class="lightbox" id="lightbox">
+  <div class="lightbox hp-section-tight" id="lightbox">
     <div class="lightbox-content">
       <button class="lb-close" id="lbClose">×</button>
-      <img class="lightbox-img" id="lbImg" src="" alt="">
+      <img class="lightbox-img" id="lbImg" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="">
       <button class="lb-nav lb-prev" id="lbPrev">‹</button>
       <button class="lb-nav lb-next" id="lbNext">›</button>
       <p class="lb-credit" id="lbCredit"></p>
@@ -110,6 +116,7 @@
 
   <script src="../js/gallery2.js"></script>
   <script src="../js/services.js"></script>
+  <script src="../js/nav-transitions.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

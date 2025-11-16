@@ -133,6 +133,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link nav-icon" href="../about/trust-hub.html" data-tooltip="Trust Hub">
+                            <span class="material-symbols-rounded icon">workspace_premium</span>
+                            <span class="nav-text">Trust Hub</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link nav-icon active" aria-current="page" href="../booking/booking.html" data-tooltip="Booking">
                             <span class="material-symbols-rounded icon">event</span>
                             <span class="nav-text">Booking</span>
@@ -150,23 +156,23 @@
     </nav>
 
     <!-- WRAP/CONTAIN ALL CONTENT -->
-    <div class="wrap-container">
+    <div class="wrap-container hp-section hp-container hp-stack-lg">
         <!-- MAIN SECTION BEGINS -->
-        <div class="main-section-col">
+        <div class="main-section-col hp-stack-lg">
             <!-- TOP IMAGE CENTERED -->
-            <section class="center-image">
+            <section class="center-image hp-section-tight">
                 <img src="../images/dogs/dog-services.jpg" class="rounded-soft-lg" alt="Yorkshire Terrier with a hand in the left corner using scissors to trim the fur.">
             </section>
 
             <!-- HEADING AND INTRO TO BOOKING -->
-            <section class="section-item main">
+            <section class="section-item main hp-stack-md">
                 <h2 class="center-text">Booking at Happy Paw</h2>
                 <p class="center-text">Your dog deserves a gentle touch and a great look. Book your grooming today.</p>
             </section>
 
             <!-- BOOKING FORM START -->
-            <section class="booking-form">
-                <form id="contactForm" onsubmit="showToast(event)">
+            <section class="booking-form hp-section hp-stack-md">
+                <form id="contactForm" class="hp-stack-md" onsubmit="showToast(event)">
                 <!-- first and last name -->
                     <div class="form-row">
                         <div class="label-input-col">
@@ -256,5 +262,6 @@
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="../js/services.js"></script>
+    <script src="../js/nav-transitions.js"></script>
 </body>
 </html>

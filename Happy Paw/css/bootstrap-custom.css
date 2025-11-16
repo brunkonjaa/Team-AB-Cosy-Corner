@@ -47,29 +47,8 @@
    documentation and do not require individual citation.
    ================================================ */
 
-/* ================================================
-   CSS CUSTOM PROPERTIES - Original Design
-   ================================================ */
-
-:root {
-  /* Calming Pastel Palette - Original color scheme by Team AB */
-  --hp-primary: #a8d5e2;        /* Soft sky blue - trust & calm */
-  --hp-primary-dark: #7eb8cc;   /* Slightly deeper blue */
-  --hp-secondary: #c8e6c9;      /* Gentle sage green - natural & refreshing */
-  --hp-accent: #e1bee7;         /* Soft lavender - premium & soothing */
-  --hp-light: #f5f5f5;          /* Off-white for backgrounds */
-  --hp-muted: #b0b0b0;          /* Soft gray for secondary text */
-  --hp-text: #4a4a4a;           /* Warm dark gray instead of black */
-  --hp-white: #ffffff;
-  
-  /* Rounded corner standard */
-  --hp-radius: 1.25rem;         /* 20px - generous rounded corners */
-  --hp-radius-sm: 0.75rem;      /* 12px - smaller elements */
-  --hp-radius-lg: 2rem;         /* 32px - large cards */
-  
-  /* Gentle transitions */
-  --hp-transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
+/* Design tokens now live in css/consolidated.css so Bootstrap overrides
+   automatically inherit the shared palette, spacing scale, and transitions. */
 
 /* ================================================
    NAVBAR - Customized Bootstrap Navbar Component
@@ -285,208 +264,7 @@
   }
 }
 
-/* ================================================
-   SERVICE CARDS - Customized Bootstrap Card Component
-   Base component: https://getbootstrap.com/docs/5.3/components/card/
-   Modified: Added hover lift effect, custom border-radius, soft shadows,
-   image scaling on hover, custom padding and typography.
-   Layout uses Bootstrap grid system as intended.
-   ================================================ */
 
-.service-card {
-  border: none !important;
-  border-radius: var(--hp-radius-lg) !important;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  transition: var(--hp-transition);
-  overflow: hidden;
-  height: 100%;
-  background: var(--hp-white);
-}
-
-.service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 32px rgba(168, 213, 226, 0.25);
-}
-
-.service-card img {
-  border-radius: var(--hp-radius-lg) var(--hp-radius-lg) 0 0;
-  height: 200px;
-  object-fit: cover;
-  transition: var(--hp-transition);
-}
-
-.service-card:hover img {
-  transform: scale(1.05);
-}
-
-.service-card .card-body {
-  padding: 1.75rem;
-}
-
-.service-card .card-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--hp-primary-dark);
-  margin-bottom: 1rem;
-}
-
-.service-card .card-text {
-  color: var(--hp-text);
-  line-height: 1.7;
-  font-size: 1rem;
-}
-
-.service-card .btn {
-  margin-top: 1rem;
-  border-radius: var(--hp-radius);
-  padding: 0.75rem 1.5rem;
-  font-weight: 500;
-  transition: var(--hp-transition);
-}
-
-/* ================================================
-   PRICING TABLES - Customized Bootstrap Cards & List Groups
-   Base components: 
-   - Cards: https://getbootstrap.com/docs/5.3/components/card/
-   - List Groups: https://getbootstrap.com/docs/5.3/components/list-group/
-   Modified: Custom gradient headers, featured card scaling and border,
-   checkmark styling, custom hover effects, soft shadows.
-   Pricing table layout pattern inspired by standard SaaS comparison tables.
-   All content and styling modifications are original.
-   ================================================ */
-
-.pricing-card {
-  border: none !important;
-  border-radius: var(--hp-radius-lg) !important;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  transition: var(--hp-transition);
-  overflow: hidden;
-  background: var(--hp-white);
-  height: 100%;
-}
-
-.pricing-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 32px rgba(200, 230, 201, 0.25);
-}
-
-.pricing-card.featured {
-  border: 3px solid var(--hp-accent) !important;
-  transform: scale(1.05);
-}
-
-.pricing-card.featured:hover {
-  transform: scale(1.08) translateY(-8px);
-}
-
-.pricing-card .card-header {
-  background: linear-gradient(135deg, var(--hp-primary) 0%, var(--hp-secondary) 100%);
-  color: var(--hp-white);
-  border: none;
-  padding: 2rem 1.5rem;
-  text-align: center;
-}
-
-.pricing-card .card-header h3 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.75rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.pricing-card .card-header .price {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin: 0.5rem 0;
-}
-
-.pricing-card .card-header .price-note {
-  font-size: 0.9rem;
-  opacity: 0.9;
-}
-
-.pricing-card .card-body {
-  padding: 2rem 1.5rem;
-}
-
-.pricing-card .list-group-item {
-  border: none;
-  padding: 0.75rem 0;
-  color: var(--hp-text);
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-.pricing-card .list-group-item:last-child {
-  border-bottom: none;
-}
-
-.pricing-card .list-group-item i,
-.pricing-card .list-group-item .checkmark {
-  color: var(--hp-secondary);
-  margin-right: 0.75rem;
-  font-weight: 600;
-}
-
-/* ================================================
-   BUTTONS - Customized Bootstrap Button Component
-   Base component: https://getbootstrap.com/docs/5.3/components/buttons/
-   Modified: Custom gradient backgrounds, soft shadows, lift hover effect,
-   changed transition timing from default 0.15s to 0.35s cubic-bezier,
-   custom color schemes per button type (primary, secondary, accent).
-   All color values and hover effects are original modifications.
-   ================================================ */
-
-.btn-happy-primary {
-  background: linear-gradient(135deg, var(--hp-primary) 0%, var(--hp-primary-dark) 100%);
-  border: none;
-  color: var(--hp-white);
-  border-radius: var(--hp-radius);
-  padding: 0.875rem 2rem;
-  font-weight: 600;
-  transition: var(--hp-transition);
-  box-shadow: 0 4px 12px rgba(168, 213, 226, 0.3);
-}
-
-.btn-happy-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(168, 213, 226, 0.4);
-  color: var(--hp-white);
-}
-
-.btn-happy-secondary {
-  background: linear-gradient(135deg, var(--hp-secondary) 0%, #a5d6a7 100%);
-  border: none;
-  color: var(--hp-text);
-  border-radius: var(--hp-radius);
-  padding: 0.875rem 2rem;
-  font-weight: 600;
-  transition: var(--hp-transition);
-  box-shadow: 0 4px 12px rgba(200, 230, 201, 0.3);
-}
-
-.btn-happy-secondary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(200, 230, 201, 0.4);
-  color: var(--hp-text);
-}
-
-.btn-happy-accent {
-  background: linear-gradient(135deg, var(--hp-accent) 0%, #ce93d8 100%);
-  border: none;
-  color: var(--hp-white);
-  border-radius: var(--hp-radius);
-  padding: 0.875rem 2rem;
-  font-weight: 600;
-  transition: var(--hp-transition);
-  box-shadow: 0 4px 12px rgba(225, 190, 231, 0.3);
-}
-
-.btn-happy-accent:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(225, 190, 231, 0.4);
-  color: var(--hp-white);
-}
 
 /* ================================================
    CAROUSEL - Customized Bootstrap Carousel Component
@@ -553,81 +331,12 @@
 }
 
 /* ================================================
-   UTILITY CLASSES - Original Helper Classes
-   All utility classes below are original work for consistent spacing,
-   typography, and styling across the Happy Paw website.
-   These complement Bootstrap's utility classes but are custom-designed
-   for this project's specific needs.
-   ================================================ */
-
-.section-padding {
-  padding: 4rem 0;
-}
-
-.section-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: var(--hp-primary-dark);
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.section-subtitle {
-  font-family: 'Lora', serif;
-  font-size: 1.25rem;
-  color: var(--hp-text);
-  text-align: center;
-  margin-bottom: 3rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.rounded-soft {
-  border-radius: var(--hp-radius) !important;
-}
-
-.rounded-soft-lg {
-  border-radius: var(--hp-radius-lg) !important;
-}
-
-/* ================================================
-   RESPONSIVE ADJUSTMENTS - Original Media Queries
-   Mobile-first responsive design adjustments for tablets and phones.
-   All breakpoint values and responsive modifications are original work
-   tailored to Happy Paw's specific layout needs.
+   RESPONSIVE ADJUSTMENTS - Navbar tweaks
    ================================================ */
 
 @media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
-  
-  .section-subtitle {
-    font-size: 1.1rem;
-  }
-  
-  .pricing-card.featured {
-    transform: scale(1);
-  }
-  
   .navbar-happy-paw {
     padding: 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .service-card .card-body,
-  .pricing-card .card-body {
-    padding: 1.25rem;
-  }
-  
-  .btn-happy-primary,
-  .btn-happy-secondary,
-  .btn-happy-accent {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.95rem;
   }
 }
 
@@ -1046,17 +755,4 @@ main {
             }
         }
 
-/* Hero image styling */
-.hero-image {
-    max-height: 400px;
-    object-fit: cover;
-}
-
-/* Pricing section with gradient background */
-.pricing-section-bg {
-    background: linear-gradient(to bottom, #f5f5f5 0%, #ffffff 100%);
-    margin-top: 3rem;
-    padding: 4rem 15px;
-    border-radius: 2rem;
-}
         /* END OF PARALLAX SCROLLING EFFECT *//* ================================================ */

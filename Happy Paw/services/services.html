@@ -51,6 +51,9 @@
             <a class="nav-link" href="../gallery/gallery2.html">Gallery</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="../about/trust-hub.html">Trust Hub</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="../booking/booking.html">Booking</a>
           </li>
           <li class="nav-item">
@@ -62,12 +65,12 @@
   </nav>
 
   <!-- Main page -->
-  <<main>
-  <section class="center-image">
+  <main class="hp-stack-lg">
+  <section class="center-image hp-section-tight hp-container">
     <img src="../images/dogs/mydog.jpg" alt="Happy dog after grooming">
   </section>
 
-  <section class="services-intro">
+  <section class="services-intro hp-section hp-container hp-stack-md">
   <h2>Professional Dog Grooming Services</h2>
   <p>
     At Happy Paw, we believe every dog deserves to look and feel their best. 
@@ -76,7 +79,7 @@
   </p>
 </section>
 
-<section class="service-list">
+<section class="service-list hp-section hp-container hp-grid-auto">
 
   <article class="service-item">
     <h3>Full Groom</h3>
@@ -129,11 +132,87 @@
 
 </section>
 
-<section class="services-footer">
+<section class="services-footer hp-section-tight hp-container">
   <p>
     Want to give your furry friend the full spa experience? 
     Visit our <a href="../booking/booking.html">Booking</a> page to reserve an appointment today.
   </p>
+</section>
+
+<section id="wellness-insight" class="hp-section hp-container hp-stack-lg">
+  <div class="hp-stack-md text-center">
+    <h2 class="section-title">Wellness Insight Engine</h2>
+    <p class="section-subtitle">
+      Log what you observe during every groom and get instant prompts when a pattern needs extra care.
+    </p>
+  </div>
+
+  <div class="wellness-engine hp-stack-lg">
+    <div class="wellness-grid">
+      <div class="wellness-card">
+        <h3>Log a New Observation</h3>
+        <form id="wellnessForm" class="wellness-form hp-stack-md">
+          <div class="input-row">
+            <label for="petName">Pet Name</label>
+            <input id="petName" name="petName" type="text" placeholder="e.g., Bella" required />
+          </div>
+          <div class="input-row">
+            <label for="visitDate">Visit Date</label>
+            <input id="visitDate" name="visitDate" type="date" required />
+          </div>
+          <div class="input-row">
+            <label for="observationType">Observation</label>
+            <select id="observationType" name="observationType" required>
+              <option value="">Choose a focus area</option>
+              <option value="Dry paws">Dry paws</option>
+              <option value="Coat matting">Coat matting</option>
+              <option value="Skin redness">Skin redness</option>
+              <option value="Shedding spike">Shedding spike</option>
+              <option value="Ear irritation">Ear irritation</option>
+            </select>
+          </div>
+          <div class="input-row">
+            <label for="severity">Severity</label>
+            <select id="severity" name="severity" required>
+              <option value="">Select</option>
+              <option value="Mild">Mild</option>
+              <option value="Moderate">Moderate</option>
+              <option value="Severe">Severe</option>
+            </select>
+          </div>
+          <div class="input-row">
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes" placeholder="Comfort level, recommended products, next steps"></textarea>
+          </div>
+          <button class="hp-btn hp-btn-primary" type="submit">Save observation</button>
+        </form>
+      </div>
+
+      <div class="wellness-card">
+        <h3>Recent Entries</h3>
+        <div id="wellnessEmpty" class="insight-empty" hidden>No observations yet.</div>
+        <div class="insight-table-wrapper">
+          <table class="insight-table">
+            <thead>
+              <tr>
+                <th>Pet</th>
+                <th>Observation</th>
+                <th>Severity</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody id="wellnessEntries"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="wellness-card">
+      <h3>Trend Prompts</h3>
+      <p class="hp-text-muted">We surface patterns after three similar notes so you can start a proactive conversation.</p>
+      <div id="trendList" class="trend-list"></div>
+    </div>
+  </div>
 </section>
 </main>
 
@@ -142,5 +221,7 @@
     <p>&copy; 2025 My Website | All rights reserved.</p>
   </footer>
   <script src="../js/services.js"></script>
+  <script src="../js/wellness-engine.js"></script>
+  <script src="../js/nav-transitions.js"></script>
 </body>
 </html>
