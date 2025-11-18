@@ -625,6 +625,11 @@ textarea {
   box-shadow: 0 4px 15px rgba(188, 108, 96, 0.3);
 }
 
+.opening-hours {
+  text-align: center;
+  margin-top: 2rem;
+}
+
 /* RIGHT SIDE: Contact Form */
 .contact-form-right {
   flex: 0 0 370px;

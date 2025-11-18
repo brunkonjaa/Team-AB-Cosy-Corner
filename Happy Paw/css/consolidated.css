@@ -1605,6 +1605,12 @@ textarea {
   filter: saturate(0.8) brightness(1.05);
 }
 
+.contact-map-embed {
+  border: 0;
+  width: 100%;
+  min-height: 150px;
+}
+
 /* BOTTOM CARD: Salon Hours and Info */
 .contact-info-details {
   background: white;
@@ -1740,6 +1746,7 @@ textarea {
   }
 }
 
+
 /* Gallery 2 Carousel and Lightbox Styles - Originally inline in gallery2.html */
 .main-container {
   padding-top: 0px;
@@ -1799,6 +1806,8 @@ textarea {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 

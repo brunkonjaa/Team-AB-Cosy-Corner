@@ -1,4 +1,4 @@
-/* ================================================
+﻿/* ================================================
    Happy Paw Bootstrap Custom Styling
    Author: Team AB - Cosy Corner
    Date: October 2025
@@ -151,7 +151,7 @@
    - Active state: rgba(193, 122, 116, 0.3) background highlight
    
    Responsive Design:
-   - Desktop (≥992px): Icons only, text appears on hover as tooltip
+   - Desktop (Ã”Ã«Ã‘992px): Icons only, text appears on hover as tooltip
    - Mobile (<992px): Icons + text shown inline, no tooltip needed
    
    CSS Classes:
@@ -611,7 +611,7 @@ main {
         }
 
         .card-window ul li::before {
-            content: '🐾';
+            content: "\2022";
             font-size: 1rem;
         }
 
