@@ -1348,11 +1348,11 @@ header {
     max-width: 900px;                           /* max width of main section */
     display: flex; 
     align-items: center;
-    /* background: #fff; */
-    padding: 0rem !important;
-    /* gap: 2rem;                                  gap between children */
+    background: #fff;
+    padding: 2rem;
+    gap: 2rem;                                  /* gap between children */
     border-radius: 10px;                        /* rounded corners */
-    /* box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);         subtle shadow */
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);         /* subtle shadow */
 }
 
 /* flex direction column */

@@ -151,7 +151,7 @@
    - Active state: rgba(193, 122, 116, 0.3) background highlight
    
    Responsive Design:
-   - Desktop (Ã”Ã«Ã‘992px): Icons only, text appears on hover as tooltip
+  - Desktop (≥992px): Icons only, text appears on hover as tooltip
    - Mobile (<992px): Icons + text shown inline, no tooltip needed
    
    CSS Classes:
