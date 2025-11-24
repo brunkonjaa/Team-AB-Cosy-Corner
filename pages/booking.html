@@ -33,72 +33,79 @@
     </header>
 
     <main>
-            <section class="hero container px-3">
-        <div class="section-header text-center">
-          <img class="booking-hero-img" src="../assets/img/gallery-10.jpg" alt="Dog grooming preview">
-          <h1 class="headline">Booking at Happy Paw</h1>
-          <p class="lede">Your dog deserves a gentle touch and a great look. Book your grooming today.</p>
+      <section class="hero container px-3 px-md-5">
+        <div class="wave"></div>
+        <div class="section-header">
+          <h1 class="headline">Book a pamper visit.</h1>
+          <p class="lede">Choose your service, share your pup's details, and we'll confirm within 30 minutes.</p>
         </div>
         <div class="double-grid">
-          <div class="form-card">
-            <img class="booking-hero-img" src="../assets/img/gallery-10.jpg" alt="Dog grooming preview">
-            <h1 class="headline">Booking at Happy Paw</h1>
-            <p class="lede">Your dog deserves a gentle touch and a great look. Book your grooming today.</p>
+          <div class="form-card-new">
             <form id="bookingForm">
-              <div class="row g-3">
-                <div class="col-12 col-md-6">
+              <div class="form-row">
+                <div class="mb-3">
                   <label class="form-label">First name</label>
                   <input type="text" class="form-control-custom" placeholder="Alex" required>
                 </div>
-                <div class="col-12 col-md-6">
-                  <label class="form-label">Last name</label>
+                <div class="mb-3">
+                  <label class="form-label">Surname</label>
                   <input type="text" class="form-control-custom" placeholder="Smith" required>
                 </div>
-                <div class="col-12 col-md-6">
-                  <label class="form-label">Email address</label>
-                  <input type="email" class="form-control-custom" placeholder="you@example.com" required>
-                </div>
-                <div class="col-12 col-md-6">
-                  <label class="form-label">Phone</label>
-                  <input type="tel" class="form-control-custom" placeholder="+353 86 000 1234" required>
-                </div>
-                <div class="col-12">
+              </div>
+              
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control-custom" placeholder="you@example.com" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Phone</label>
+                <input type="tel" class="form-control-custom" placeholder="+353 86 000 1234" required>
+              </div>
+              <div class="form-row">
+                <div class="mb-3">
                   <label class="form-label">Dog's name</label>
-                  <input type="text" class="form-control-custom" placeholder="Milo" required>
+                  <input type="text" class="form-control-custom" placeholder="Milo">
                 </div>
-                <div class="col-12 col-md-6">
-                  <label class="form-label">Appointment date</label>
-                  <input type="date" class="form-control-custom" required>
-                </div>
-                <div class="col-6 col-md-3">
-                  <label class="form-label">Time</label>
-                  <input type="time" class="form-control-custom" required>
-                </div>
-                <div class="col-6 col-md-3">
-                  <label class="form-label">Service required</label>
-                  <select class="form-control-custom" required>
-                    <option value="">Select a service</option>
-                    <option>Full Groom</option>
-                    <option>Bath & Blow Dry</option>
-                    <option>Mini Groom</option>
-                    <option>Puppy Introduction</option>
-                    <option>Deshed Spa</option>
-                    <option>Senior Comfort</option>
-                  </select>
-                </div>
-                <div class="col-12">
-                  <label class="form-label">Additional notes</label>
-                  <textarea class="form-control-custom" rows="4" placeholder="Enter any additional notes or information that we may need to know"></textarea>
-                </div>
-                <div class="col-12 text-center">
-                  <label class="form-label" style="font-weight:600;"><input type="checkbox" style="margin-right:8px;">I consent to Happy Paw's terms & conditions.</label>
-                </div>
-                <div class="col-12 text-center">
-                  <button type="submit" class="btn-pill" style="max-width:220px; width:100%; justify-content:center;">Request booking</button>
+                <div class="mb-3">
+                  <label class="form-label">Dog's breed</label>
+                  <input type="text" class="form-control-custom" placeholder="Cavapoo">
                 </div>
               </div>
+              <div class="mb-3">
+                <label class="form-label">Preferred service</label>
+                <select class="form-control-custom" required>
+                  <option value="">Select</option>
+                  <option>Full Groom</option>
+                  <option>Bath & Blow Dry</option>
+                  <option>Mini Groom</option>
+                  <option>Puppy Introduction</option>
+                  <option>De-shed Spa</option>
+                  <option>Senior Comfort</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Preferred date</label>
+                <input type="date" class="form-control-custom" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Notes (anxieties, allergies, vet guidance)</label>
+                <textarea class="form-control-custom" rows="3" placeholder="Share anything that helps us prepare."></textarea>
+              </div>
+              <button type="submit" class="btn-pill w-100">Request booking</button>
             </form>
             <div id="thankYouMessage" class="inline-success">Request received! We'll confirm soon.</div>
+          </div>
+          <div class="stack-md">
+            <div class="glass-card">
+              <div class="card-icon"><i class="bi bi-shield-check"></i></div>
+              <h3 class="card-title">Arrival checklist</h3>
+              <p class="card-text">Please bring vaccination info if new, note recent vet visits, and share any sensitivities. We stagger arrivals to keep things calm.</p>
+            </div>
+            <div class="glass-card">
+              <div class="card-icon"><i class="bi bi-heart"></i></div>
+              <h3 class="card-title">Comfort-first promise</h3>
+              <p class="card-text">Breaks on request, water always available, and we call you if your dog needs a shorter session.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -134,4 +141,3 @@
   <script src="../assets/js/extras.js"></script>
 </body>
 </html>
-

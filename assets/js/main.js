@@ -33,6 +33,8 @@
         lastY = currentY;
       };
       window.addEventListener("scroll", handleTouchScroll, { passive: true });
+      
+      // openFooter(); // always open on touch devices for accessibility
     } else {
       const updateScrollFlag = () => {
         const scrollable = document.documentElement.scrollHeight - window.innerHeight;
