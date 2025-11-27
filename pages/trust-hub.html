@@ -117,7 +117,7 @@
           <p>Track recurring observations and spot trends over time.</p>
         </div>
         <div class="wellness-wrap">
-          <div class="wellness-card">
+          <div class="wellness-card wc-1">
             <form id="wellnessForm">
               <div class="mb-3">
                 <label class="form-label">Pet name</label>
@@ -152,7 +152,8 @@
               <button type="submit" class="btn-pill w-100">Log entry</button>
             </form>
           </div>
-          <div class="wellness-card" style="overflow-x:auto;">
+          <!-- wellness trend output -->
+          <div class="wellness-card wc-2" style="overflow-x:auto;">
             <div id="wellnessEmpty" class="wellness-empty" hidden>No entries yet. Add your first visit log.</div>
             <table class="wellness-table">
               <thead>
@@ -161,7 +162,7 @@
               <tbody id="wellnessEntries"></tbody>
             </table>
           </div>
-          <div class="wellness-card">
+          <div class="wellness-card wc-3">
             <h4>Trend prompts</h4>
             <div id="trendList" class="trend-list"></div>
           </div>
