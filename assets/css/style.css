@@ -166,8 +166,96 @@ main {
   transform: translateY(-2px);
 }
 
-.nav-links a i {
-  font-size: 1.1rem;
+.material-symbols-rounded {
+  font-family: 'Material Symbols Rounded';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga';
+}
+
+/* navbar icons */
+.navbar-icons .nav-icon .icon {
+  font-size: 1.5rem;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.navbar-icons .nav-icon .nav-text {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.navbar-icons .nav-icon:hover .nav-text {
+  opacity: 1;
+}
+
+.navbar-icons .nav-icon:hover .icon {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+}
+
+.navbar-icons .nav-icon.active .icon {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.navbar-icons .nav-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.navbar-icons .nav-icon .nav-text::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 5px 5px 5px;
+  border-style: solid;
+  border-color: transparent transparent rgba(255, 255, 255, 0.9) transparent;
+}
+
+@media (max-width: 768px) {
+  .navbar-icons .nav-icon .nav-text {
+    display: block;
+    position: static;
+    transform: none;
+    opacity: 1;
+    background-color: transparent;
+    color: #fff;
+    padding: 0;
+    margin-top: 5px;
+    font-size: 0.85rem;
+  }
+
+  .navbar-icons .nav-icon .nav-text::before {
+    display: none;
+  }
 }
 
 .nav-toggle {
