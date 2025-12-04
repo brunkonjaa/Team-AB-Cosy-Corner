@@ -375,6 +375,7 @@ main {
   position: relative;
   display: flex;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .hero-img img {
@@ -383,9 +384,8 @@ main {
   box-shadow: var(--card-shadow);
 }
 
-.about-page .hero-img img,
-.services-page .hero-img img {
-  max-width: 30%;
+.about-page .hero-img img{
+  max-width: 60%;
 }
 
 .floating-card {
@@ -396,6 +396,19 @@ main {
   padding: 1rem 1.25rem;
   border-radius: 18px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.about-page .floating-card{
+  bottom: 50px;
+}
+
+@media (max-width: 640px){
+  .floating-card{
+    left: 0px;
+  }
+  .about-page .floating-card {
+    bottom: -30px; 
+  }
 }
 
 /* ------------------------------
