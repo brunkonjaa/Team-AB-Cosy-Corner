@@ -1045,7 +1045,7 @@ main {
 
 .lightbox-inner {
   position: relative;
-  background: #0f1624;
+  background: #453a36;
   padding: 1rem;
   border-radius: 16px;
   max-width: 90vw;
@@ -1061,8 +1061,14 @@ main {
 .lightbox-controls {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 0.5rem;
   color: #fff;
+}
+
+#lbNext, #lbPrev{
+  padding: 0.2rem 2rem;
+  color: var(--bg-surface);
 }
 
 .lb-close {
