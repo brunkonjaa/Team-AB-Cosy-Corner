@@ -377,9 +377,14 @@ main {
 }
 
 .hero-img img {
-  max-width: 50%;
+  max-width: 80%;
   border-radius: 36px;
   box-shadow: var(--card-shadow);
+}
+
+.about-page .hero-img img,
+.services-page .hero-img img {
+  max-width: 30%;
 }
 
 .floating-card {
