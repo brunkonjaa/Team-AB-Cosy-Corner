@@ -1,7 +1,7 @@
 /* ==========================================================================
    Happy Paw | Global Stylesheet
    - Uses light Bootstrap grid (≤35%) only for layout helpers.
-   - All custom styling below is here i think
+   - Majority of code has been created/edited collectively as a group by Bruno, Molly & Alex
    ========================================================================== */
 
 /* ------------------------------
@@ -9,16 +9,6 @@
    ------------------------------ */
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,900');
 :root {
-  /* DARK COLOUR SCHEME
-   --bg-gradient: linear-gradient(135deg, #e18a73 0%, #f2c6b0 50%, #d56750 100%);
-  --bg-surface: #0f1624;
-  --bg-panel: rgba(255, 255, 255, 0.04);
-  --text-main: #f7f7fb;
-  --text-muted: #cfd5e6;
-  --accent: #ffb45a;
-  --accent-2: #5ac8c8;
-  --accent-3: #7d6bff; */ 
-
   /* LIGHT COLOUR SCHEME */
   --bg-gradient: linear-gradient(135deg, #e18a73 0%, #f2c6b0 50%, #d56750 100%);
   --bg-gradient-body: linear-gradient(135deg, #eed3c6 0%,#efece7 60%,#e8ecf0 100%);
@@ -31,8 +21,7 @@
   --accent: #ffb45a;
   --accent-2: #5ac8c8;
   --accent-3: #7d6bff;
-  /*  */
-  
+
   --card-shadow: 0 15px 30px rgba(94, 37, 16, 0.2);
   --radius-lg: 24px;
   --radius-md: 16px;
@@ -385,7 +374,7 @@ main {
 }
 
 .about-page .hero-img img{
-  max-width: 60%;
+  max-width: 40%;
 }
 
 .floating-card {
@@ -666,7 +655,7 @@ main {
    Booking & Contact Forms
    ------------------------------ */
 
-.form-card-new { /* M Kane */
+.form-card-new { /* <----M Kane */
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
   border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.08);
