@@ -1327,7 +1327,8 @@ main {
 }
 
 .content-card {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.3);
+  color: var(--text-body);
   border-radius: 30px;
   padding: 3rem;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
