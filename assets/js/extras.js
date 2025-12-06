@@ -1,5 +1,8 @@
 // Optional extras: wellness log, form toasts, and 3D carousel/lightbox.
 (function () {
+// Optional extras: Wellness log, simple form messages, and a gallery.
+// These features are small helpers used on some pages. They don't change
+// the main site functionality - they just make things nicer.
   document.addEventListener("DOMContentLoaded", () => {
     initWellness();
     initFormToasts();
@@ -7,8 +10,11 @@
   });
 
   // ------------------------------
-  // Wellness log + trends (Trust Hub)
+  // Wellness log (Trust Hub)
   // ------------------------------
+    // This part provides a small log for staff to record observations about
+    // a pet visit (like dry paws). Entries are saved in the browser so you
+    // can see previous notes and which issues happen more than once.
   function initWellness() {
     const form = document.querySelector("#wellnessForm");
     const entriesBody = document.querySelector("#wellnessEntries");
@@ -17,6 +23,7 @@
     if (!form || !entriesBody || !trendList) return;
 
     const STORAGE_KEY = "hpWellnessEntries";
+      // Browser storage key and a small initial dataset for the demo
     const SEED = [
       { petName: "Luna", observationType: "Dry paws", severity: "Moderate", notes: "Cracks between pads, balm + booties", visitDate: "2025-11-05" },
       { petName: "Max", observationType: "Coat matting", severity: "Severe", notes: "Hips matted, advised slicker comb homework", visitDate: "2025-10-28" },
@@ -27,6 +34,7 @@
     render(entries);
 
     form.addEventListener("submit", (event) => {
+      // When user submits the form, add a new log entry and refresh the list
       event.preventDefault();
       const formData = new FormData(form);
       const entry = {
@@ -43,6 +51,7 @@
     });
 
     function render(list) {
+      // Update table that shows log entries, and show or hide the empty state
       if (!list.length) {
         emptyState.hidden = false;
         entriesBody.innerHTML = "";
@@ -65,6 +74,7 @@
     }
 
     function renderTrends(list) {
+      // Look for issues that happen more than once and show a short note for each
       if (!list.length) {
         trendList.innerHTML = `<div class="wellness-empty">Log a few sessions to see pattern prompts.</div>`;
         return;
@@ -95,6 +105,7 @@
     }
 
     function loadEntries() {
+      // Load entries from browser storage (localStorage), or use initial data
       try {
         const cached = localStorage.getItem(STORAGE_KEY);
         if (cached) return JSON.parse(cached);
@@ -106,6 +117,7 @@
     }
 
     function saveEntries(list) {
+      // Save the entries back to localStorage so data stays in the browser
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
       } catch (e) {
@@ -115,6 +127,7 @@
   }
 
   function buildSuggestion(issue, count, severity) {
+    // Give a short suggestion text for a repeated issue or a severe case
     const base = {
       "Dry paws": "Suggest balm add-on + home hydration plan.",
       "Coat matting": "Offer maintenance trim or comb coaching.",
@@ -129,10 +142,12 @@
   }
 
   function sanitize(value) {
+    // Escape special characters to keep text safe when we display it on the page
     return value?.replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch])) || "";
   }
 
   function formatDate(value) {
+    // Show a short, readable date string for the visit date (e.g. "Nov 05")
     if (!value) return "—";
     try {
       const formatter = new Intl.DateTimeFormat("en-IE", { month: "short", day: "2-digit" });
@@ -145,6 +160,9 @@
   // ------------------------------
   // Form toasts (Contact/Booking)
   // ------------------------------
+    // Small messages when a form is submitted
+    // These are tiny messages shown to the user when a contact or booking
+    // form is submitted. They do not send data anywhere by themselves.
   function initFormToasts() {
     const toast = document.querySelector("#toast");
     const contactForm = document.querySelector("#contactForm");
@@ -152,6 +170,7 @@
     const thankYou = document.querySelector("#thankYouMessage");
 
     if (contactForm) {
+      // Show a short message at top of the page when contact form is sent
       contactForm.addEventListener("submit", (e) => {
         e.preventDefault();
         if (toast) {
@@ -163,6 +182,7 @@
     }
 
     if (bookingForm) {
+      // Show a quick “thank you” message when booking form is sent
       bookingForm.addEventListener("submit", (e) => {
         e.preventDefault();
         if (thankYou) {
@@ -177,6 +197,8 @@
   // ------------------------------
   // 3D carousel + lightbox (Gallery)
   // ------------------------------
+    // Gallery carousel and lightbox
+    // A rotating gallery with a larger view that opens when you click an image.
   function initCarousel() {
     const stage = document.querySelector(".carousel-stage");
     const carousel = document.querySelector("#carousel");
@@ -189,8 +211,10 @@
     const lbPrev = document.querySelector("#lbPrev");
     const lbNext = document.querySelector("#lbNext");
     if (!stage || !carousel || !prevBtn || !nextBtn || !lb || !lbImg || !lbCredit || !lbClose || !lbPrev || !lbNext) return;
+      // If we don't have right HTML on this page, stop doing anything here
 
     const photos = [
+      // Photos used in gallery. Each item has a source, alt text, and credit.
       { src: "../assets/img/gallery-01.webp", alt: "Teddy trim", credit: "Happy Paw" },
       { src: "../assets/img/gallery-02.webp", alt: "Post-bath smiles", credit: "Happy Paw" },
       { src: "../assets/img/gallery-03.webp", alt: "Gentle scissoring", credit: "Happy Paw" },
@@ -214,6 +238,7 @@
     let lbIndex = 0;
 
     photos.forEach((photo, i) => {
+      // Build small cards for each photo and add them to carousel
       const card = document.createElement("div");
       card.className = "carousel-card";
       card.innerHTML = `<img src="${photo.src}" alt="${photo.alt}">`;
@@ -222,6 +247,7 @@
     });
 
     function updatePositions() {
+      // Update each card's position and appearance based on current rotation
       const cards = carousel.children;
       for (let i = 0; i < cards.length; i++) {
         const angle = step * i + currentRotation;
@@ -243,6 +269,7 @@
     }
 
     function animate() {
+      // Smoothly move the carousel until it settles on target rotation
       const diff = targetRotation - currentRotation;
       if (Math.abs(diff) > 0.1) {
         currentRotation += diff * 0.12;
@@ -258,6 +285,7 @@
     }
 
     function rotate(dir) {
+      // Move the carousel one step to the left or right
       targetRotation -= dir * (step / 2);
       if (!isRotating) {
         isRotating = true;
@@ -266,21 +294,25 @@
     }
 
     prevBtn.addEventListener("click", () => rotate(-1));
+      // Arrow buttons: rotate carousel
     nextBtn.addEventListener("click", () => rotate(1));
 
     carousel.addEventListener("click", (e) => {
+      // Clicking a card opens bigger view (lightbox) for that photo
       const card = e.target.closest(".carousel-card");
       if (!card || card.style.pointerEvents === "none") return;
       openLightbox(parseInt(card.dataset.index, 10));
     });
 
     function openLightbox(idx) {
+      // Open lightbox and show selected photo
       lbIndex = idx;
       showPhoto(lbIndex);
       lb.classList.add("show");
     }
 
     function showPhoto(idx) {
+      // Update the lightbox with photo
       lbIndex = (idx + photos.length) % photos.length;
       lbImg.src = photos[lbIndex].src;
       lbImg.alt = photos[lbIndex].alt;
@@ -288,6 +320,7 @@
     }
 
     function closeLightbox() {
+      // Close big photo view
       lb.classList.remove("show");
     }
 
