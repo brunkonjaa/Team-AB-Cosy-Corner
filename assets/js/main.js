@@ -74,18 +74,70 @@
       const href = link.getAttribute("href");
       if (!href || href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:")) return;
       e.preventDefault();
+      
+      // Fade out current content smoothly
+      document.body.classList.add("transitioning");
+      
       if (overlay) {
         overlay.classList.remove("hidden");
       }
+      
       setTimeout(() => {
         window.location.href = href;
-      }, 220);
+      }, 250);
     });
   });
 
   window.addEventListener("load", () => {
+    document.body.classList.remove("transitioning");
     if (overlay) {
-      setTimeout(() => overlay.classList.add("hidden"), 80);
+      setTimeout(() => overlay.classList.add("hidden"), 100);
     }
   });
+
+  // ------------------------------
+  // Konami Code Easter Egg
+  // Inspired by the classic Konami Code cheat (↑↑↓↓←→←→BA)
+  // Origin: https://en.wikipedia.org/wiki/Konami_Code
+  // First appeared in Gradius (1986) and popularized by Contra (1988)
+  // ------------------------------
+  const secretBtn = document.querySelector('#secretBtn');
+  if (secretBtn) {
+    secretBtn.addEventListener('click', () => {
+      alert('🎮 Secret Code:\n\n↑ ↑ ↓ ↓ ← → ← → B A\n\nYou found the secret code, try it 😉');
+    });
+  }
+
+  let keys = [];
+  const code = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+  document.addEventListener('keydown', (e) => {
+    keys.push(e.key);
+    keys = keys.slice(-10);
+    if (keys.join(',') === code.join(',')) {
+      document.body.style.animation = 'spin 1s ease-in-out';
+      setTimeout(() => {
+        alert('🐾 WOOF WOOF! You unlocked the secret! Good boy/girl! 🐾\n\nUse code: GOODBOY for 10% off your next groom! 💚');
+        document.body.style.animation = '';
+      }, 1000);
+    }
+  });
+
+  // ------------------------------
+  // Parallax effect for tilted photo cards (About page)
+  // ------------------------------
+  document.addEventListener('scroll', () => {
+    const tiltCards = document.querySelectorAll('.tilt-card');
+    
+    tiltCards.forEach((card, index) => {
+      const rect = card.getBoundingClientRect();
+      const scrollPercent = (window.innerHeight - rect.top) / window.innerHeight;
+      
+      if (scrollPercent > 0 && scrollPercent < 1) {
+        const speeds = [0.3, 0.6, 0.9]; // Very different speeds
+        const moveY = (scrollPercent - 0.5) * 150 * speeds[index];
+        const rotation = index === 1 ? 2 : (index === 2 ? -5 : -3);
+        card.style.transform = `rotate(${rotation}deg) translateY(${moveY}px)`;
+      }
+    });
+  }, { passive: true });
 })();

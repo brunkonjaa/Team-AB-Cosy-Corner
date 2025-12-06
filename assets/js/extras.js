@@ -191,18 +191,18 @@
     if (!stage || !carousel || !prevBtn || !nextBtn || !lb || !lbImg || !lbCredit || !lbClose || !lbPrev || !lbNext) return;
 
     const photos = [
-      { src: "../assets/img/gallery-01.jpg", alt: "Teddy trim", credit: "Happy Paw" },
-      { src: "../assets/img/gallery-02.jpg", alt: "Post-bath smiles", credit: "Happy Paw" },
-      { src: "../assets/img/gallery-03.jpg", alt: "Gentle scissoring", credit: "Happy Paw" },
-      { src: "../assets/img/gallery-04.jpg", alt: "Puppy intro", credit: "Happy Paw" },
-      { src: "../assets/img/gallery-05.jpg", alt: "Spa bubbles", credit: "Happy Paw" },
-      { src: "../assets/img/gallery-06.jpg", alt: "Towel wrap", credit: "Happy Paw" },
-      { src: "../assets/img/gallery-07.jpg", alt: "Finishing touches", credit: "Happy Paw" },
-      { src: "../assets/img/gallery-08.jpg", alt: "Happy portraits", credit: "Happy Paw" },
-      { src: "../assets/img/gallery-09.jpg", alt: "Groom room", credit: "Happy Paw" },
-      { src: "../assets/img/gallery-10.jpg", alt: "Tools ready", credit: "Happy Paw" },
-      { src: "../assets/img/gallery-11.jpg", alt: "Outdoor joy", credit: "Happy Paw" },
-      { src: "../assets/img/gallery-12.jpg", alt: "Fresh cut", credit: "Happy Paw" }
+      { src: "../assets/img/gallery-01.webp", alt: "Teddy trim", credit: "Happy Paw" },
+      { src: "../assets/img/gallery-02.webp", alt: "Post-bath smiles", credit: "Happy Paw" },
+      { src: "../assets/img/gallery-03.webp", alt: "Gentle scissoring", credit: "Happy Paw" },
+      { src: "../assets/img/gallery-04.webp", alt: "Puppy intro", credit: "Happy Paw" },
+      { src: "../assets/img/gallery-05.webp", alt: "Spa bubbles", credit: "Happy Paw" },
+      { src: "../assets/img/gallery-06.webp", alt: "Towel wrap", credit: "Happy Paw" },
+      { src: "../assets/img/gallery-07.webp", alt: "Finishing touches", credit: "Happy Paw" },
+      { src: "../assets/img/gallery-08.webp", alt: "Happy portraits", credit: "Happy Paw" },
+      { src: "../assets/img/gallery-09.webp", alt: "Groom room", credit: "Happy Paw" },
+      { src: "../assets/img/gallery-10.webp", alt: "Tools ready", credit: "Happy Paw" },
+      { src: "../assets/img/gallery-11.webp", alt: "Outdoor joy", credit: "Happy Paw" },
+      { src: "../assets/img/gallery-12.webp", alt: "Fresh cut", credit: "Happy Paw" }
     ];
 
     const total = photos.length;
@@ -226,20 +226,16 @@
       for (let i = 0; i < cards.length; i++) {
         const angle = step * i + currentRotation;
         cards[i].style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
+        cards[i].style.opacity = "1";
       }
       requestAnimationFrame(() => {
         for (let i = 0; i < cards.length; i++) {
           const angle = step * i + currentRotation;
           const rad = (angle * Math.PI) / 180;
           const z = Math.cos(rad) * radius;
-          if (z > 100) {
-            cards[i].style.opacity = "1";
+          if (z > 0) {
             cards[i].style.pointerEvents = "auto";
-          } else if (z > -200) {
-            cards[i].style.opacity = "0.4";
-            cards[i].style.pointerEvents = "none";
           } else {
-            cards[i].style.opacity = "0.12";
             cards[i].style.pointerEvents = "none";
           }
         }
@@ -262,10 +258,11 @@
     }
 
     function rotate(dir) {
-      if (isRotating) return;
-      isRotating = true;
       targetRotation -= dir * (step / 2);
-      animate();
+      if (!isRotating) {
+        isRotating = true;
+        animate();
+      }
     }
 
     prevBtn.addEventListener("click", () => rotate(-1));

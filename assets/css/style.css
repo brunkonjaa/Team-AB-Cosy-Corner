@@ -52,6 +52,11 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   padding-bottom: calc(var(--footer-height) + 10px);
+  transition: opacity 0.25s ease;
+}
+
+body.transitioning {
+  opacity: 0.3;
 }
 
 a {
@@ -786,10 +791,11 @@ main {
 .page-transition-overlay {
   position: fixed;
   inset: 0;
-  background: #0a1220;
+  background: rgba(246, 239, 231, 0.85);
+  backdrop-filter: blur(8px);
   z-index: 1300;
   opacity: 1;
-  transition: opacity 0.35s ease;
+  transition: opacity 0.3s ease;
 }
 
 .page-transition-overlay.hidden {
@@ -798,12 +804,12 @@ main {
 }
 
 .fade-in {
-  animation: fadeIn 0.4s ease both;
+  animation: fadeIn 0.35s ease both;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* ------------------------------
@@ -874,10 +880,10 @@ main {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.tilt-card:nth-child(1) { margin-left: 0; }
+.tilt-card:nth-child(2) { transform: rotate(2deg); margin-left: auto; margin-right: 0; }
 .tilt-card:nth-child(2) { transform: rotate(2deg); }
 .tilt-card:nth-child(3) { transform: rotate(-5deg); }
-.tilt-card:hover {
-  transform: rotate(0deg) translateY(-6px);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
 }
 
@@ -1124,4 +1130,37 @@ main {
 
 .inline-success.show {
   display: block;
+}
+
+/* ------------------------------
+   Konami Code Easter Egg
+   Inspired by the classic Konami Code cheat (↑↑↓↓←→←→BA)
+   Origin: https://en.wikipedia.org/wiki/Konami_Code
+   ------------------------------ */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#secretBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 0.6rem 1rem;
+  background: linear-gradient(135deg, #e18a73, #d56750);
+  color: white;
+  border: 2px solid rgba(213, 103, 80, 0.8);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  z-index: 2000;
+  box-shadow: 0 4px 12px rgba(213, 103, 80, 0.3);
+  transition: all 0.2s ease;
+}
+
+#secretBtn:hover {
+  background: linear-gradient(135deg, #d56750, #c5563f);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(213, 103, 80, 0.5);
 }
