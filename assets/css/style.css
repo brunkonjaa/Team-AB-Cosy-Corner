@@ -1166,3 +1166,269 @@ main {
   transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(213, 103, 80, 0.5);
 }
+
+/* PARALLAX LAYER CONTAINER */
+.parallax-layer {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  pointer-events: none;
+  will-change: transform;
+  transition: none;
+}
+
+/* LAYER 1: Background shapes (slowest - 0.3x speed) */
+.layer-bg {
+  z-index: 1;
+}
+
+.bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+}
+
+.shape-1 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #e18a73, #f2c6b0);
+  top: 200px;
+  left: -100px;
+}
+
+.shape-2 {
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(135deg, #f2c6b0, #d56750);
+  top: 800px;
+  right: -150px;
+}
+
+.shape-3 {
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(135deg, #d56750, #e18a73);
+  top: 1500px;
+  left: 10%;
+}
+
+.shape-4 {
+  width: 450px;
+  height: 450px;
+  background: linear-gradient(135deg, #e18a73, #f2c6b0);
+  top: 2200px;
+  right: 5%;
+}
+
+/* LAYER 2: Dog images (medium speed - 0.6x) */
+.layer-middle {
+  z-index: 5;
+}
+
+.parallax-dog-img {
+  position: absolute;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  border: 5px solid white;
+}
+
+.dog-img-1 {
+  width: 300px;
+  height: 400px;
+  top: 600px;
+  right: 10%;
+  transform: rotate(8deg);
+}
+
+.dog-img-1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dog-img-2 {
+  width: 350px;
+  height: 280px;
+  top: 900px;
+  left: 5%;
+  transform: rotate(-5deg);
+}
+
+.dog-img-2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dog-img-3 {
+  width: 280px;
+  height: 350px;
+  top: 1600px;
+  right: 15%;
+  transform: rotate(12deg);
+}
+
+.dog-img-3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dog-img-4 {
+  width: 320px;
+  height: 320px;
+  top: 1900px;
+  left: 8%;
+  transform: rotate(-8deg);
+  border-radius: 50%;
+}
+
+.dog-img-4 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Decorative paw prints */
+.paw-print {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.2;
+  filter: grayscale(1);
+}
+
+.paw-1 {
+  top: 600px;
+  left: 15%;
+  transform: rotate(25deg);
+}
+
+.paw-2 {
+  top: 1100px;
+  right: 5%;
+  transform: rotate(-15deg);
+}
+
+.paw-3 {
+  top: 1600px;
+  left: 20%;
+  transform: rotate(40deg);
+}
+
+/* CONTENT CARDS (Layer 3 - normal scroll speed) */
+.parallax-content-cards {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 12rem;
+  padding: 2rem 0;
+}
+
+.content-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  border: 3px solid rgba(225, 138, 115, 0.3);
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.content-card h2 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-main);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.content-card h3 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-main);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.content-card p {
+  color: var(--text-body);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.content-card .contact-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.content-card .contact-list li {
+  color: var(--text-body);
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.content-card .contact-list li::before {
+  content: '🐾';
+  font-size: 1rem;
+}
+
+.content-card .hours-info {
+  background: linear-gradient(135deg, rgba(225, 138, 115, 0.1), rgba(242, 198, 176, 0.1));
+  padding: 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+  color: var(--text-body);
+  line-height: 1.8;
+  margin-top: 2rem;
+}
+
+.content-card .hours-info strong {
+  color: var(--text-main);
+  font-size: 1.2rem;
+}
+
+/* Ensure page-wrap and main content are on top */
+.page-wrap {
+  position: relative;
+  z-index: 100;
+}
+
+/* RESPONSIVE - Hide parallax layers on mobile for performance */
+@media (max-width: 768px) {
+  .parallax-dog-img {
+    display: none;
+  }
+
+  .bg-shape {
+    opacity: 0.08;
+  }
+
+  .paw-print {
+    display: none;
+  }
+
+  .content-card {
+    padding: 2rem;
+  }
+
+  .content-card h2 {
+    font-size: 2rem;
+  }
+
+  .content-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .parallax-content-cards {
+    gap: 3rem;
+  }
+}
