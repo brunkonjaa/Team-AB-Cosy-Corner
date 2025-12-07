@@ -218,15 +218,15 @@
       { src: "../assets/img/gallery-01.webp", alt: "Teddy trim", credit: "Happy Paw" },
       { src: "../assets/img/gallery-02.webp", alt: "Post-bath smiles", credit: "Happy Paw" },
       { src: "../assets/img/gallery-03.webp", alt: "Gentle scissoring", credit: "Happy Paw" },
-      { src: "../assets/img/gallery-04.webp", alt: "Puppy intro", credit: "Happy Paw" },
-      { src: "../assets/img/gallery-05.webp", alt: "Spa bubbles", credit: "Happy Paw" },
+      { src: "../assets/img/gallery-20.webp", alt: "Puppy intro", credit: "Happy Paw" },
+      { src: "../assets/img/gallery-16.webp", alt: "Spa bubbles", credit: "Happy Paw" },
       { src: "../assets/img/gallery-06.webp", alt: "Towel wrap", credit: "Happy Paw" },
       { src: "../assets/img/gallery-07.webp", alt: "Finishing touches", credit: "Happy Paw" },
       { src: "../assets/img/gallery-08.webp", alt: "Happy portraits", credit: "Happy Paw" },
       { src: "../assets/img/gallery-09.webp", alt: "Groom room", credit: "Happy Paw" },
       { src: "../assets/img/gallery-10.webp", alt: "Tools ready", credit: "Happy Paw" },
-      { src: "../assets/img/gallery-11.webp", alt: "Outdoor joy", credit: "Happy Paw" },
-      { src: "../assets/img/gallery-12.webp", alt: "Fresh cut", credit: "Happy Paw" }
+      { src: "../assets/img/gallery-12.webp", alt: "Outdoor joy", credit: "Happy Paw" },
+      { src: "../assets/img/gallery-13.webp", alt: "Fresh cut", credit: "Happy Paw" }
     ];
 
     const total = photos.length;
